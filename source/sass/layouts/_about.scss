@@ -1,0 +1,39 @@
+.about {
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    height: 65vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  &__pic {
+    position: relative;
+    overflow: hidden;
+  }
+  &__text, &__img {
+    background-color: $color-bla;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  &__text {
+    background-color: $color-white;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 2;
+    margin-left: 40px;
+  }
+}
+
+

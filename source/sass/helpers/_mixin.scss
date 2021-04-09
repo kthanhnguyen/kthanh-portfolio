@@ -1,0 +1,102 @@
+@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+  background: {
+      image: url($imgpath);
+      position: $position;
+      repeat: $repeat;
+  }
+}
+// Element Transition
+//-----------------------------------
+@mixin transition($second) {
+  -webkit-transition: all $second;
+  -moz-transition: all $second;
+  transition: all $second;
+}
+
+// Border radius
+//-----------------------------------
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// media screen --- Use min-screen, limited usage max-screen
+//-----------------------------------
+@mixin min-screen($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin max-screen($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min-max($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+
+
+@mixin mediaQuery($screen) {
+  @if map-has-key($map: $breakpoints, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (max-width: ($value)) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$screen}` khong ton tai";
+  }
+}
+
+@mixin mediaQueryMin($screen) {
+  @if map-has-key($map: $breakpoints, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$screen}` khong ton tai";
+  }
+}
+
+// Grid Column
+//-----------------------------------
+@mixin grid($display: flex, $flex-wrap: wrap, $gutter: $default-grid-gutter)
+{
+	@if $display {
+		display: $display;
+	}
+
+	@if $flex-wrap {
+		flex-wrap: $flex-wrap;
+	}
+
+  margin-left: -(($gutter / 2) * 1px);
+  margin-right: -(($gutter / 2) * 1px);
+
+	@content;
+}
+
+@mixin column($nameCol) {
+  @for $i from 1 through $default-grid-columns {
+      .grid-#{$nameCol}-#{$i} {
+        flex: 1 1 (100 * $i) / $default-grid-columns * 1%;
+        max-width: (100 * $i) / $default-grid-columns * 1%;
+        max-height: 100%;
+      }
+  }
+}
+

@@ -1,0 +1,107 @@
+/* ------------------ Loading screen ------------------ */
+.loading {
+  position: fixed;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #181818;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    height: 160px;
+    text-align: center;
+    @include mediaQuery("md") {
+      width: 80%;
+    }
+  }
+  .progress-bar {
+    height: 1px;
+    background: #f4a4c5;
+  }
+  .progress-bar_bg {
+    height: 1px;
+    background: $color-main;
+    width: 0;
+  }
+  .loading-logo {
+    img {
+      margin: 0 auto 10px;
+      width: 80px;
+    }
+  }
+}
+
+.bg-main {
+  background: $bg-main;
+  color: $color-white;
+}
+
+.main-content {
+  margin-left: 60px;
+}
+
+.page-section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @each $bp, $container-size in $container-sizes {
+    @include min(#{bp(#{$bp})}) {
+      width: 100%;
+      max-width: container(#{$bp});
+    }
+  }
+}
+
+/* ============ text ============ */
+._center {
+  text-align: center;
+}
+
+/* ============ title ============ */
+.h2__ttl {
+  font-family: "coolvetica";
+  font-size: 5.3rem;
+  color: $color-main;
+  text-align: center;
+}
+
+.ttl-bar {
+  background: $color-main;
+  height: 4px;
+  margin: 25px auto 60px;
+  width: 70px;
+}
+
+
+.grid {
+  @include grid();
+}
+
+@each $key, $val in $column-sizes {
+  @if ($key == 'xs') {
+    $colDefault: map-get($column-sizes, 'xs');
+      @include column($colDefault);
+  } @else {
+      @media (min-width: $val * 1px) {
+          @include column($key);
+      }
+  }
+}
