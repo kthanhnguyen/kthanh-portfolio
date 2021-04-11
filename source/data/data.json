@@ -2,12 +2,10 @@
   {
     "id": "01",
     "name": "COURSES ONLINE",
-    "about": [
-      {
-        "aboutTop": "Project to buy online courses.",
-        "aboutBottom":"This project I undertake the design, interface, and functionality of the product. The project uses Firebase to manage data."
-      }
-    ],
+    "about": {
+      "aboutTop": "Project to buy online courses.",
+      "aboutBottom":"This project I undertake the design, interface, and functionality of the product. The project uses Firebase to manage data."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript ES6" },
@@ -43,12 +41,10 @@
   {
     "id": "02",
     "name": "MY MOVIE",
-    "about": [
-      {
-        "aboutTop": "Building an online movie ticketing application. Users can buy movie tickets of all cinemas across the country.",
-        "aboutBottom": "This project I undertake the design, interface, and functionality of the product. The project uses API to retrieve data."
-      }
-    ],
+    "about": {
+      "aboutTop": "Building an online movie ticketing application. Users can buy movie tickets of all cinemas across the country.",
+      "aboutBottom": "This project I undertake the design, interface, and functionality of the product. The project uses API to retrieve data."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Typescript" },
@@ -78,12 +74,10 @@
     "id": "03",
     "name": "TRANSCOSMOS ANALYTICS RECRUIT",
     "imgMain": "/images/project/03/01.png",
-    "about": [
-      {
-        "aboutTop": "Build the target company's website to provide analytical information to determine the user interface improvement direction. Analysis is based on many factors like Adobe Analytics, Google Analytics, etc.",
-        "aboutBottom": "At this project, I act as a front end developer. Get Xd design from customers. Then develop the product."
-      }
-    ],
+    "about": {
+      "aboutTop": "Build the target company's website to provide analytical information to determine the user interface improvement direction. Analysis is based on many factors like Adobe Analytics, Google Analytics, etc.",
+      "aboutBottom": "At this project, I act as a front end developer. Get Xd design from customers. Then develop the product."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -112,12 +106,10 @@
     "id": "04",
     "name": "JAPAN MEETING & EVENT",
     "imgMain": "/images/project/04/01.png",
-    "about": [
-      {
-        "aboutTop": "Establish website introducing tourism destinations, and prominent events of Japan. Users can search for each place, entertainment, dining, event venue in any prefecture in Japan.",
-        "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
-      }
-    ],
+    "about": {
+      "aboutTop": "Establish website introducing tourism destinations, and prominent events of Japan. Users can search for each place, entertainment, dining, event venue in any prefecture in Japan.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -147,12 +139,10 @@
     "id": "05",
     "name": "GAME MONSTER",
     "imgMain": "/images/project/05/01.png",
-    "about": [
-      {
-        "aboutTop": "The game kills moving monsters by clicking on them.",
-        "aboutBottom": "This project I designed, and developed as a trainee."
-      }
-    ],
+    "about": {
+      "aboutTop": "The game kills moving monsters by clicking on them.",
+      "aboutBottom": "This project I designed, and developed as a trainee."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -176,12 +166,10 @@
     "id": "06",
     "name": "Matt collection",
     "imgMain": "/images/project/06/01.png",
-    "about": [
-      {
-        "aboutTop": "Project on website to sell carpet.",
-        "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project requires the use of pure javascript."
-      }
-    ],
+    "about": {
+      "aboutTop": "Project on website to sell carpet.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project requires the use of pure javascript."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -206,12 +194,10 @@
     "id": "07",
     "name": "Tutuanna Sporty",
     "imgMain": "/images/project/07/01.png",
-    "about": [
-      {
-        "aboutTop": "A landing page for selling sports uniforms.",
-        "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
-      }
-    ],
+    "about": {
+      "aboutTop": "A landing page for selling sports uniforms.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -238,12 +224,10 @@
     "id": "08",
     "name": "JCB",
     "imgMain": "/images/project/08/01.png",
-    "about": [
-      {
-        "aboutTop": "Project on incentives and usage of JCB card.",
-        "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project used Gulp to build the scss, then layouts were integrated into the CMS Durpal"
-      }
-    ],
+    "about": {
+      "aboutTop": "Project on incentives and usage of JCB card.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project used Gulp to build the scss, then layouts were integrated into the CMS Durpal"
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },
@@ -273,12 +257,10 @@
     "id": "09",
     "name": "TOYOBO",
     "imgMain": "/images/project/09/01.png",
-    "about": [
-      {
-        "aboutTop": "Toyobo company website (Films and Functional Polymers, Industrial Materials, and Healthcare)",
-        "aboutBottom": "This project, I act as front end developer. Data is based on old website, content correction according to customer opinion."
-      }
-    ],
+    "about": {
+      "aboutTop": "Toyobo company website (Films and Functional Polymers, Industrial Materials, and Healthcare)",
+      "aboutBottom": "This project, I act as front end developer. Data is based on old website, content correction according to customer opinion."
+    },
     "technical": [
       { "technicalName": "Front-End Development" },
       { "technicalName": "Javascript" },

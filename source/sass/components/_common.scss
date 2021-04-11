@@ -50,12 +50,17 @@
 
 .main-content {
   margin-left: 60px;
+  @include mediaQuery("md") {
+    margin-left: 0;
+  }
 }
 
 .page-section {
   display: flex;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 7em 0 5em;
 }
 
 .container {
@@ -90,18 +95,17 @@
   width: 70px;
 }
 
-
 .grid {
   @include grid();
 }
 
 @each $key, $val in $column-sizes {
-  @if ($key == 'xs') {
-    $colDefault: map-get($column-sizes, 'xs');
-      @include column($colDefault);
+  @if ($key == "xs") {
+    $colDefault: map-get($column-sizes, "xs");
+    @include column($colDefault);
   } @else {
-      @media (min-width: $val * 1px) {
-          @include column($key);
-      }
+    @media (min-width: $val * 1px) {
+      @include column($key);
+    }
   }
 }
