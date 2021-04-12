@@ -10,10 +10,15 @@
   height: 100vh;
   background: $color-bla;
   z-index: 1050;
-  li {
-    position: relative;
-    height: 60px;
-    line-height: 60px;
+  &__menu {
+    & > ul {
+      li {
+        position: relative;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+      }
+    }
   }
   &__logo {
     display: block;
@@ -94,6 +99,10 @@
       font-size: 2rem;
       color: #909096;
       margin: 10px 0;
+      &:hover {
+        color: $color-main;
+        @include transition(0.5s);
+      }
     }
   }
 }
@@ -118,20 +127,23 @@
       width: 100%;
       height: calc(100% - 60px);
       top: 60px;
-      right: -100%;
+      right: -100vw;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       background: $color-bla;
       transition: all 0.5s;
-      li {
-        position: relative;
-        line-height: 60px;
-        height: 60px;
-        margin: 10px 0;
-        left: 100vw;
-        box-sizing: border-box;
+      & > ul {
+        li {
+          position: relative;
+          width: auto;
+          line-height: 60px;
+          height: 60px;
+          margin: 10px 0;
+          left: 100vw;
+          box-sizing: border-box;
+        }
       }
     }
     &__logo {

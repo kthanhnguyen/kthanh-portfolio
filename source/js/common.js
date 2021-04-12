@@ -1,36 +1,69 @@
-$(document).ready(function () {
+window.addEventListener('load', function () {
+  loadingScreen();
+
+  new WOW().init();
+
   aciveMenu();
+  window.addEventListener('scroll', aciveMenu);
+
   menuMobile();
-});
+  window.addEventListener('resize', menuMobile);
+})
+
+function loadingScreen() {
+  var loadingScreen = document.getElementById("loading");
+  var progressBar = document.getElementById("progress-bar_bg");
+
+  setTimeout(() => {
+    TweenLite.fromTo(
+      loadingScreen,
+      0.6,
+      {
+        immediateRender: false,
+        x: "0%",
+        ease: "Power4.easeIn",
+      },
+      {
+        x: "100%",
+      },
+      0
+    );
+  }, 2500);
+
+  TweenLite.fromTo(
+    progressBar,
+    1,
+    { width: 0 },
+    { width: "100%", duration: 1 }
+  );
+}
+
+
 
 function aciveMenu() {
-  $("a[href*=\\#]").bind("click", function (e) {
-    e.preventDefault();
+  const links = document.querySelectorAll('.header__menu a');
+  const sections = document.querySelectorAll('.page-section');
 
-    var target = $(this).attr("href");
+  let index = sections.length;
 
-    $("html, body")
-      .stop()
-      .animate({
-          scrollTop: $(target).offset().top,
-        },
-        600
-      );
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
 
-    return false;
-  });
-  $(window)
-    .scroll(function () {
-      var scrollDistance = $(window).scrollTop();
+  links.forEach((link) => link.classList.remove('active'));
+  links[index].classList.add('active');
 
-      $(".page-section").each(function (i) {
-        if ($(this).position().top <= scrollDistance) {
-          $(".header__menu a.active").removeClass("active");
-          $(".header__menu a").eq(i).addClass("active");
-        }
+
+  for (const link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+      const offsetTop = document.querySelector(href).offsetTop;
+
+      scroll({
+        top: offsetTop,
+        behavior: "smooth"
       });
-    })
-    .scroll();
+    });
+  }
 }
 
 function menuMobile() {

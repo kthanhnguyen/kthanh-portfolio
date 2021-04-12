@@ -1,11 +1,5 @@
 .about {
   &__item {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    height: 65vh;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
   }
   &__pic {
@@ -32,7 +26,7 @@
     position: relative;
     font-size: 1.8rem;
     line-height: 2;
-    margin-left: 40px;
+    padding-left: 40px;
   }
 }
 

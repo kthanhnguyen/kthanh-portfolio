@@ -1,11 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
-$(document).ready(function () {
+window.addEventListener('load', function () {
   animation();
   mainVisual();
   tagSkilks();
   getDataProject();
-});
+})
 
 function animation() {
   const containers = document.querySelectorAll(".about__item");
@@ -31,27 +31,23 @@ function animation() {
       })
       .to(
         rvtext, {
-          xPercent: 100,
-          ease: "power2.inOut",
-        },
+        xPercent: 100,
+        ease: "power2.inOut",
+      },
         "-=2"
       )
       .fromTo(
         image, {
-          scale: 2,
-        }, {
-          scale: 1,
-        },
+        scale: 2,
+      }, {
+        scale: 1,
+      },
         0.3
       );
   });
 }
 
 function mainVisual() {
-  const text = document.querySelector(".mainVisual__title");
-  const sub = document.querySelector(".mainVisual__sub");
-  const icon = document.querySelector(".mainVisual__mouse-icon");
-
   const particlesJSON = {
     particles: {
       number: {
@@ -165,118 +161,44 @@ function mainVisual() {
 
   particlesJS("particles", particlesJSON);
 
-  // mouse icon animation
-  const iconTl = gsap.timeline({
-    repeat: -1,
-    paused: true,
-  });
-  iconTl
-    .to(
-      "#scroll", {
-        y: 20,
-        autoAlpha: 0,
-        transformOrigin: "50% 100%",
-        duration: 0.7,
-      },
-      "icon"
-    )
-    .to(
-      "#outline", {
-        y: 8,
-        duration: 0.7,
-      },
-      "icon"
-    )
-    .to(
-      "#outline", {
-        y: 0,
-        duration: 0.7,
-      },
-      "icon+=0.7"
-    );
+  document.querySelector(".mainVisual__mouse-icon").addEventListener("click", function(e){
+    e.preventDefault();
+    const href = this.getAttribute("href");
+      const offsetTop = document.querySelector(href).offsetTop;
 
-  // Hero Parallax
-  const tl = gsap.timeline({
-    defaults: {
-      ease: "none",
-      transformOrigin: "50% 50%",
-    },
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.utils.toArray("img").forEach((layer) => {
-    const depth = layer.dataset.depth;
-    const movement = -(layer.offsetHeight * depth);
-    tl.to(
-      layer, {
-        y: -movement,
-      },
-      0
-    );
-  });
-
-  tl.to(
-      text, {
-        y: -text.offsetHeight * text.dataset.depth,
-        autoAlpha: 0,
-        scale: 1.08,
-        duration: 0.2,
-      },
-      0
-    )
-    .to(
-      sub, {
-        y: -sub.offsetHeight * sub.dataset.depth,
-        autoAlpha: 0,
-        scale: 1.05,
-        duration: 0.2,
-      },
-      0.06
-    )
-    .to(
-      icon, {
-        y: -icon.offsetHeight * icon.dataset.depth,
-        autoAlpha: 0,
-        duration: 0.2,
-      },
-      0
-    );
+      scroll({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+  })
 }
-
 
 
 function tagSkilks() {
-  if (
-    !$("#myCanvas").tagcanvas({
-        textColour: "#ffffff",
-        outlineThickness: 0.5,
-        outlineColour: "#FE0853",
-        maxSpeed: 0.06,
-        freezeActive: true,
-        shuffleTags: true,
-        shape: "sphere",
-        zoom: 0.9,
-        noSelect: true,
-        textFont: null,
-        pinchZoom: true,
-        freezeDecel: true,
-        fadeIn: 3000,
-        initial: [0.3, -0.1],
-        depth: 1.4,
-      },
-      "tags"
-    )
-  ) {
+  try {
+    TagCanvas.Start('myCanvas', 'tags', {
+      textColour: "#ffffff",
+      outlineThickness: 0.5,
+      outlineColour: "#FE0853",
+      maxSpeed: 0.06,
+      freezeActive: true,
+      shuffleTags: true,
+      shape: "sphere",
+      zoom: 0.9,
+      noSelect: true,
+      noMouse: true,
+      textFont: null,
+      pinchZoom: true,
+      freezeDecel: true,
+      fadeIn: 3000,
+      initial: [0.3, -0.1],
+      depth: 1.4,
+    });
+  } catch (e) {
     // something went wrong, hide the canvas container
-    $("#myCanvasContainer").hide();
+    document.getElementById('myCanvasContainer').style.display = 'none';
   }
 }
-
 function getItem(list) {
   var rs = list.map((i) => {
     return "<li>" + i.tagname + "</li>";
@@ -291,28 +213,19 @@ function getDataProject() {
   $.getJSON(jsonPath, function (data) {
     _json = data;
 
-    var projectBody = $(".portfolio__list");
+    var projectBody = document.querySelector(".portfolio__list");
 
     var projectItem = _json.map((item) => {
       return (
         '<div class="grid-md-4">' +
-        '<div class="image item" data-modal="modal-' +
-        item.id +
-        '">' +
+        '<div class="image item" data-modal="modal-' + item.id + '">' +
         '<div class="bar">' +
-        "<h2>" +
-        item.name +
-        "</h2><i></i>" +
-        "</div>" +
+        "<h2>" +  item.name +  "</h2><i></i>" +  "</div>" +
         '<div class="main">' +
-        '  <div class="back"><img src="' +
-        item.imgMain +
-        '" alt=""></div>' +
+        '  <div class="back"><img src="' +  item.imgMain +  '" alt=""></div>' +
         ' <div class="tags">' +
         "    <div>" +
-        "      <ul>" +
-        getItem(item.tags) +
-        "</ul>" +
+        "      <ul>" +  (getItem(item.tags)).join("") +  "</ul>" +
         "    </div>" +
         "  </div>" +
         '  <div class="imgs"></div>' +
@@ -322,7 +235,7 @@ function getDataProject() {
       );
     });
 
-    projectBody.html(projectItem);
+    projectBody.innerHTML += projectItem.join("");
 
     openModal();
   });
@@ -342,9 +255,7 @@ function openModal() {
   $.getJSON(jsonPath, function (data) {
     _json = data;
 
-    var modalBody = $(".modal-block");
-
-    console.log(_json);
+    var modalBody = document.querySelector(".modal-block");
 
     var modalItem = _json.map((item) => {
       return (
@@ -367,7 +278,7 @@ function openModal() {
         "          </svg>VISITS THIS WEBSITE" +
         "        </a>" +
         "      </div>" +
-        '      <div class="detail__slide">' + getModalSlider(item.id, item.listImgs) + '</div>' +
+        '      <div class="detail__slide">' + (getModalSlider(item.id, item.listImgs)).join("") + '</div>' +
         '      <div class="detail__info">' +
         "        <h2>About this project</h2>" +
         "        <p>" + item.about.aboutTop + "</p>" +
@@ -392,7 +303,7 @@ function openModal() {
       );
     });
 
-    modalBody.html(modalItem);
+    modalBody.innerHTML += modalItem.join("");
 
     $(".detail__slide").slick({
       dots: true,
@@ -421,26 +332,26 @@ function openModal() {
       var spans = document.querySelectorAll('.modal__close');
       for (var i = 0; i < spans.length; i++) {
         spans[i].onclick = function () {
-          for (var index in modals) {
-            if (modals[index].classList.contains('modal--open')) {
-              modals[index].classList.add("modal--out");
-              modals[index].classList.remove("modal--open");
+          modals.forEach(index => {
+            if (index.classList.contains('modal--open')) {
+              index.classList.add("modal--out");
+              index.classList.remove("modal--open");
               document.body.classList.remove("modal-active");
               document.body.style.paddingRight = "0";
             }
-          }
+          })
         }
 
         window.onclick = function (event) {
           if (event.target.classList.contains('modal__background')) {
-            for (var index in modals) {
-              if (typeof modals[index].style !== 'undefined') {
-                modals[index].classList.add("modal--out");
-                modals[index].classList.remove("modal--open");
+            modals.forEach(index => {
+              if (index.classList.contains('modal--open')) {
+                index.classList.add("modal--out");
+                index.classList.remove("modal--open");
                 document.body.classList.remove("modal-active");
                 document.body.style.paddingRight = "0";
               }
-            }
+            })
           }
         }
       }
