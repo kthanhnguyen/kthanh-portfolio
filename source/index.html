@@ -12,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/materialdesignicons.css">
   <link rel="stylesheet" href="./css/animate.min.css">
+  <link rel="stylesheet" href="./css/fullPage.min.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
-  <div class="loading" id="loading">
+  <!-- <div class="loading" id="loading">
     <div class="inner">
       <div class="loading-logo">
         <img src="/images/logo.png" alt="" />
@@ -26,11 +27,12 @@
         <div class="progress-bar_bg" id="progress-bar_bg"></div>
       </div>
     </div>
-  </div>
-  <div class="wrapper">
-    <header class="header wow slideInLeft" data-wow-delay="3s">
+  </div> -->
+
+  <div class="wrapper" id="wrapper">
+    <header id="header" class="header wow slideInLeft" data-wow-delay="3s">
       <a class="header__logo" href="/"><img src="/images/logo.png" alt=""></a>
-      <nav class="header__menu">
+      <nav id="header__menu" class="header__menu">
         <ul>
           <li><a href="#home" class="header__link header__link--home"><i class="icon-hom"></i></a></li>
           <li><a href="#about" class="header__link header__link--about"><i class="icon-prof"></i></a></li>
@@ -46,25 +48,25 @@
       </ul>
       <div id="mobile-link"><span></span><span></span><span></span></div>
     </header>
-    <div class="main-content">
-      <div class="mainVisual page-section" id="home">
-        <div id="particles"></div>
-        <div class="mainVisual__text">
-          <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3.3s">Hello, I'm <span
-              class="mainVisual__title--highlight">Nguyen
-              Kim Thanh</span><br>I'm a front-end web developer.</h1>
-        </div>
-        <a class="mainVisual__mouse-icon fadeInUp wow" data-wow-delay="3.5s" href="#about">
-          <span class="icon-btn"></span>
-          <div class="arrow">
-            <span></span>
-            <span></span>
-          </div>
-        </a>
+    <div class="mainVisual page-section" id="home">
+      <div id="particles"></div>
+      <div class="mainVisual__text">
+        <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3.3s">Hello, I'm <span
+            class="mainVisual__title--highlight">Nguyen
+            Kim Thanh</span><br>I'm a front-end web developer.</h1>
       </div>
+      <a class="mainVisual__mouse-icon fadeInDown wow" data-wow-delay="3.6s" href="#about">
+        <span class="icon-btn"></span>
+        <div class="arrow">
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+    <div class="main-content">
       <section id="about" class="about page-section">
         <div class="about__list container">
-          <h2 class="h2__ttl"><span class="ttl-bar"></span>About Me</h2>
+
           <div class="grid about__item">
             <div class="grid-md-6 about__pic">
               <img
@@ -73,83 +75,105 @@
               <div class="about__img"></div>
             </div>
             <div class="grid-md-6 about__content">
-              <p>Hi, I'm Thanh. A website developer, currently working at Ho Chi Minh city.</p>
-              <p>I have a passion for the beauty, whether simple or extravagant. I also love coding and design. As
-                someone
-                who likes to watch movies and listen to music to relax.</p>
-              <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
-              <div class="about__text"></div>
+              <div class="section-ttl-block section-ttl-block--right">
+                <h2 class="h2-ttl-line">About Me</h2>
+                <span class="ttl-bar line-bar"></span>
+              </div>
+              <div class="about__content-text">
+                <p>Hi, I'm Thanh. A website developer, currently working at Ho Chi Minh city.</p>
+                <p>I have a passion for the beauty, whether simple or extravagant. I also love coding and design. As
+                  someone
+                  who likes to watch movies and listen to music to relax.</p>
+                <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.
+                </p>
+                <div class="about__text"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="skills" class="skills page-section bg-main">
+      <section id="skills" class="skills page-section">
         <div class="container">
           <div class="grid">
             <div class="grid-md-6 skills__text">
-              <h2 class="h2__ttl"><span class="ttl-bar"></span>Skills</h2>
-              <div class="ttl-bar"></div>
-              <p>The main area of my expertise is front end development (client side of the web).</p>
-              <p>Worked on a multitude of web and print based projects for a range of clients providing Web Design
-                (Photoshop, Adobe Xd) and Development (HTML, CSS, SASS, JS, jQuery, Bootstrap, Responsive Layouts,
-                Browser
-                compatibility).</p>
-              <p>Familiar frameworks like ReactJS, Angular2+.</p>
+              <div class="section-ttl-block">
+                <span class="ttl-bar"></span>
+                <h2 class="h2-ttl-line">Skills</h2>
+              </div>
+              <div class="fadeInUp wow" data-wow-delay="1.5s">
+                <p>The main area of my expertise is front end development (client side of the web).</p>
+                <p>Worked on a multitude of web and print based projects for a range of clients providing Web Design
+                  (Photoshop, Adobe Xd) and Development (HTML, CSS, SASS, JS, jQuery, Bootstrap, Responsive Layouts,
+                  Browser
+                  compatibility).</p>
+                <p>Familiar frameworks like ReactJS, Angular2+.</p>
+              </div>
             </div>
             <div class="grid-md-6">
-              <div id="myCanvasContainer">
-                <canvas width="500" height="500" id="myCanvas">
-                  <p>Anything in here will be replaced on browsers that support the canvas element</p>
-                </canvas>
-              </div>
-              <div id="tags">
-                <ul>
-                  <li><a href="https://en.wikipedia.org/wiki/HTML">HTML 5</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/React_(web_framework)">ReactJS</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">Redux</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/AngularJS">Angular 2+</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Node.js">Node JS</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Git">Git</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Lodash">_lodash</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">SASS</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></li>
-                  <li><a href="http://gulpjs.com/">Gulp</a></li>
-                  <li><a href="https://www.npmjs.com/">npm</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/BEM">BEM</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Photoshop</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Firebase">Firebase</a></li>
-                </ul>
+              <div class="fadeInUp wow" data-wow-delay="1.5s">
+                <div id="myCanvasContainer">
+                  <canvas width="500" height="500" id="myCanvas">
+                    <p>Anything in here will be replaced on browsers that support the canvas element</p>
+                  </canvas>
+                </div>
+                <div id="tags">
+                  <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/HTML">HTML 5</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/React_(web_framework)">ReactJS</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">Redux</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/AngularJS">Angular 2+</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Node.js">Node JS</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Git">Git</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Lodash">_lodash</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">SASS</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></li>
+                    <li><a href="http://gulpjs.com/">Gulp</a></li>
+                    <li><a href="https://www.npmjs.com/">npm</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/BEM">BEM</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Photoshop</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Firebase">Firebase</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="bg-block">
+            <div class="bg-block__content"></div>
           </div>
         </div>
       </section>
       <section id="projects" class="portfolio page-section">
         <div class="container">
-          <h2 class="h2__ttl"><span class="ttl-bar"></span>Projects</h2>
-          <div class="ttl-bar"></div>
+          <div class="section-ttl-block section-ttl-block--right">
+            <h2 class="h2-ttl-line">Projects</h2>
+            <span class="ttl-bar"></span>
+          </div>
           <div class="grid portfolio__list">
           </div>
         </div>
       </section>
-      <section id="contact" class="contact page-section bg-main">
+      <section id="contact" class="contact page-section">
         <div class="container">
-          <h2 class="h2__ttl"><span class="ttl-bar"></span>Contact</h2>
-          <div class="ttl-bar"></div>
+          <div class="section-ttl-block">
+            <span class="ttl-bar"></span>
+            <h2 class="h2-ttl-line">Contact</h2>
+          </div>
           <div>
-            <h3>Get in touch</h3>
-            <p>If you wanna get in touch, talk to me about a project collaboration or just say hi,<br> fill up the
-              awesome
-              form below or send an email to <a
-                href="mailto:nguyenkimthanh901@gmail.com">nguyenkimthanh901@gmail.com</a>
-              and ~let's talk.</p>
-            <form class="contact__form">
+            <div class="wow slideInRight">
+              <h3>Get in touch</h3>
+              <p>If you wanna get in touch, talk to me about a project collaboration or just say hi,<br> fill up the
+                awesome
+                form below or send an email to <a
+                  href="mailto:nguyenkimthanh901@gmail.com">nguyenkimthanh901@gmail.com</a>
+                and ~let's talk.</p>
+            </div>
+            <form class="contact__form wow fadeInUp">
               <ul>
                 <li class="half">
                   <input class="input__field input__field--hoshi" placeholder="Name" type="text" name="name"
@@ -173,7 +197,7 @@
               </ul>
             </form>
           </div>
-          <div>
+          <div class="wow fadeInLeft">
             <h3>Let's get social</h3>
             <ul class="contact__socical">
               <li>
@@ -302,7 +326,10 @@
         </div>
       </section>
     </div>
+
+    <div id="pageToTop" class="pageToTop"></div>
   </div>
+
   <div class="modal-block"></div>
 
 
@@ -311,6 +338,7 @@
   <script src="./js/ScrollTrigger.min.js" type="text/javascript"></script>
   <script src="./js/particles.min.js" type="text/javascript"></script>
   <script src="./js/jquery.tagcanvas.min.js" type="text/javascript"></script>
+  <script src="./js/fullpage.min.js"></script>
   <script src="./js/slick.js" type="text/javascript"></script>
   <script src="./js/wow.js"></script>
   <script src="./js/common.js"></script>

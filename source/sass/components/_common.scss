@@ -44,6 +44,13 @@
   }
 }
 
+
+// .wrapper {
+// 	position: relative;
+// 	overflow: hidden;
+// 	transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+// }
+
 .bg-main {
   background: $bg-main;
   color: $color-white;
@@ -57,11 +64,31 @@
 }
 
 .page-section {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 7em 0 5em;
+  height: 100vh;
+  padding: 4em 0 5em;
+}
+
+.bg-block {
+  position: absolute;
+  left: auto;
+  top: 0;
+  right: 0%;
+  bottom: 0;
+  z-index: -1;
+  width: calc(100% - ((100% - 1140px) / 2) - (1140px / 4));
+  height: calc(100% - (8em * 2));
+  margin: auto;
+  &__content {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
+    background-color: $color-lpink;
+  }
 }
 
 .container {
@@ -82,11 +109,9 @@
 }
 
 /* ============ title ============ */
-.h2__ttl {
-  font-family: 'Inconsolata', monospace;
-  font-size: 4rem;
-  color: $color-main; 
-  margin-bottom: 60px;
+.section-ttl-block {
+  width: 100%;
+  margin-bottom: 50px;
   .ttl-bar {
     position: static;
     display: inline-block;
@@ -96,9 +121,49 @@
     background-color: $color-main;
     margin-right: 24px;
   }
+  .h2-ttl-line {
+    display: inline-block;
+    font-family: 'Inconsolata', monospace;
+    font-size: 4rem;
+    color: $color-main; 
+  }
+  .h2-ttl {
+    font-family: "coolvetica";
+    font-size: 5rem;
+    color: $color-main;
+    text-align: center;
+  }
+  &--right {
+    text-align: right; 
+    .ttl-bar {
+      margin-right: 0;
+      margin-left: 24px;
+    }
+  }
+}
+
+/* page to top */
+.pageToTop {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  width: 45px;
+  height: 45px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: $color-main url("/images/up-arrow.svg") 50% 50% no-repeat;
+  background-size: 19px;
+  cursor: pointer;
+  transform: translateY(150%);
+  transition: all 200ms ease;
+  &.show {
+    transform: translateY(0);
+  }
 }
 
 
+/* grid */
 
 .grid {
   @include grid();

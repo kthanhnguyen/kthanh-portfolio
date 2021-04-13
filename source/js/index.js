@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 window.addEventListener('load', function () {
   animation();
   mainVisual();
@@ -8,12 +6,10 @@ window.addEventListener('load', function () {
 })
 
 function animation() {
-  const containers = document.querySelectorAll(".about__item");
-
   gsap.utils.toArray(".about__item").forEach((container) => {
     const rvimg = container.querySelector(".about__img");
     const rvtext = container.querySelector(".about__text");
-    const image = container.querySelector("about__img");
+    const image = container.querySelector(".about__pic img");
 
     const timeline = gsap.timeline({
       defaults: {
@@ -36,15 +32,41 @@ function animation() {
       },
         "-=2"
       )
-      .fromTo(
-        image, {
-        scale: 2,
-      }, {
-        scale: 1,
-      },
-        0.3
-      );
+    // .fromTo(
+    //   image, {
+    //   scale: 2,
+    // }, {
+    //   scale: 1,
+    // },
+    //   0.3
+    // );
   });
+
+
+  var bgBlock = document.querySelector(".bg-block__content");
+
+  const timeBg = gsap.timeline({
+    defaults: {
+      duration: 1,
+      ease: "Power4.easeIn",
+    },
+    scrollTrigger: {
+      trigger: bgBlock,
+      start: "top center",
+    },
+  });
+  timeBg
+    .fromTo(
+      bgBlock, {
+      immediateRender: false,
+      x: "100%",
+      ease: "Power4.easeIn",
+    },
+      {
+        x: "0",
+      },
+      0.5
+    );
 }
 
 function mainVisual() {
@@ -161,15 +183,15 @@ function mainVisual() {
 
   particlesJS("particles", particlesJSON);
 
-  document.querySelector(".mainVisual__mouse-icon").addEventListener("click", function(e){
+  document.querySelector(".mainVisual__mouse-icon").addEventListener("click", function (e) {
     e.preventDefault();
     const href = this.getAttribute("href");
-      const offsetTop = document.querySelector(href).offsetTop;
+    const offsetTop = document.querySelector(href).offsetTop;
 
-      scroll({
-        top: offsetTop,
-        behavior: "smooth"
-      });
+    scroll({
+      top: offsetTop,
+      behavior: "smooth"
+    });
   })
 }
 
@@ -177,7 +199,7 @@ function mainVisual() {
 function tagSkilks() {
   try {
     TagCanvas.Start('myCanvas', 'tags', {
-      textColour: "#ffffff",
+      textColour: "#e31b6d",
       outlineThickness: 0.5,
       outlineColour: "#FE0853",
       maxSpeed: 0.06,
@@ -214,18 +236,19 @@ function getDataProject() {
     _json = data;
 
     var projectBody = document.querySelector(".portfolio__list");
-
+    var second = 0;
     var projectItem = _json.map((item) => {
+      second += 0.1;
       return (
-        '<div class="grid-md-4">' +
+        '<div class="grid-md-4 wow zoomIn" data-wow-delay="'+ second +'s">' +
         '<div class="image item" data-modal="modal-' + item.id + '">' +
         '<div class="bar">' +
-        "<h2>" +  item.name +  "</h2><i></i>" +  "</div>" +
+        "<h2>" + item.name + "</h2><i></i>" + "</div>" +
         '<div class="main">' +
-        '  <div class="back"><img src="' +  item.imgMain +  '" alt=""></div>' +
+        '  <div class="back"><img src="' + item.imgMain + '" alt=""></div>' +
         ' <div class="tags">' +
         "    <div>" +
-        "      <ul>" +  (getItem(item.tags)).join("") +  "</ul>" +
+        "      <ul>" + (getItem(item.tags)).join("") + "</ul>" +
         "    </div>" +
         "  </div>" +
         '  <div class="imgs"></div>' +

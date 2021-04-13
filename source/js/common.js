@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 window.addEventListener('load', function () {
   loadingScreen();
 
@@ -8,6 +10,9 @@ window.addEventListener('load', function () {
 
   menuMobile();
   window.addEventListener('resize', menuMobile);
+
+  pageTop();
+  effectTitle();
 })
 
 function loadingScreen() {
@@ -37,8 +42,6 @@ function loadingScreen() {
     { width: "100%", duration: 1 }
   );
 }
-
-
 
 function aciveMenu() {
   const links = document.querySelectorAll('.header__menu a');
@@ -108,5 +111,51 @@ function menuMobile() {
         delay_time += .02;
       })
     }
+  })
+}
+
+
+function pageTop() {
+  var top = document.getElementById('pageToTop');
+
+  top.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  })
+
+  var last_pos = 0;
+
+  window.addEventListener("scroll", function(){
+    var current_pos = document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (current_pos < last_pos || current_pos == 0) {
+      top.classList.remove("show");
+    } else if (current_pos > last_pos) {
+      top.classList.add("show");
+    }
+    last_pos = current_pos;
+  })
+}
+
+function effectTitle() {
+  gsap.utils.toArray(".page-section").forEach((container) => {
+    const lineBar = container.querySelector(".ttl-bar");
+
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "expo",
+      },
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+      },
+    });
+    timeline
+      .fromTo(
+        lineBar, { width: 0 }, { width: "120px" }
+      );
   })
 }

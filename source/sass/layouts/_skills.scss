@@ -1,11 +1,12 @@
 .skills {
+  position: relative;
+  overflow: hidden;
   &__text {
     padding-right: 5em;
   }
   p {
     font-size: 1.8rem;
     line-height: 2;
-    color: $color-white;
   }
 }
 
