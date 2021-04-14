@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", function () {
-  loadingScreen();
+  // loadingScreen();
 
   aciveMenu();
   window.addEventListener("scroll", aciveMenu);
@@ -29,13 +29,11 @@ function loadingScreen() {
   setTimeout(() => {
     TweenLite.fromTo(
       loadingScreen,
-      0.6,
-      {
+      0.6, {
         immediateRender: false,
         x: "0%",
         ease: "Power4.easeIn",
-      },
-      {
+      }, {
         x: "100%",
       },
       0
@@ -44,9 +42,12 @@ function loadingScreen() {
 
   TweenLite.fromTo(
     progressBar,
-    1,
-    { width: 0 },
-    { width: "100%", duration: 1 }
+    1, {
+      width: 0
+    }, {
+      width: "100%",
+      duration: 1
+    }
   );
 }
 
@@ -56,7 +57,7 @@ function aciveMenu() {
 
   let index = sections.length;
 
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
   links.forEach((link) => link.classList.remove("active"));
   links[index].classList.add("active");
@@ -134,7 +135,11 @@ function effectTitle() {
         start: "top center",
       },
     });
-    timeline.fromTo(lineBar, { width: 0 }, { width: "120px" });
+    timeline.fromTo(lineBar, {
+      width: 0
+    }, {
+      width: "120px"
+    });
   });
 }
 
@@ -159,8 +164,7 @@ function animation() {
         xPercent: 100,
       })
       .to(
-        rvtext,
-        {
+        rvtext, {
           xPercent: -100,
           ease: "power2.inOut",
         },
@@ -178,32 +182,30 @@ function animation() {
 }
 
 function bgBlock() {
-  // var bgBlockLeft = document.querySelector(".bg-block--left .bg-block__content");
-  // var bg = document.querySelector(".bg-block--right");
-  var bgBlockRight = document.querySelector("bg-block__content");
+  gsap.utils.toArray(".page-section").forEach((container) => {
+    const bg = container.querySelector(".bg-block__content");
 
-  const timeBg = gsap.timeline({
-    defaults: {
-      duration: 1,
-      ease: "Power4.easeIn",
-    },
-    scrollTrigger: {
-      trigger: bgBlock,
-      start: "top center",
-    },
+    const timeBg = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "expo",
+      },
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+      },
+    });
+    timeBg.fromTo(
+      bg, {
+        immediateRender: false,
+        x: "100%",
+        ease: "Power4.easeIn",
+      }, {
+        x: "0",
+      },
+      0.5
+    );
   });
-  timeBg.fromTo(
-    bgBlockRight,
-    {
-      immediateRender: false,
-      x: "100%",
-      ease: "Power4.easeIn",
-    },
-    {
-      x: "0",
-    },
-    0.5
-  );
 
 }
 
@@ -360,6 +362,7 @@ function tagSkilks() {
     document.getElementById("myCanvasContainer").style.display = "none";
   }
 }
+
 function getItem(list) {
   var rs = list.map((i) => {
     return "<li>" + i.tagname + "</li>";
@@ -549,8 +552,6 @@ function fullPageScroll() {
       navigation: false,
       autoScrolling: true,
       scrollBar: true,
-      animateAnchor: true,
-      css3: true,
       verticalCentered: true,
       afterRender: function (index) {
         new WOW().init();
