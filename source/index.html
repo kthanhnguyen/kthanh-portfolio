@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/materialdesignicons.css">
   <link rel="stylesheet" href="./css/animate.min.css">
-  <link rel="stylesheet" href="./css/fullPage.min.css">
+  <link rel="stylesheet" href="./css/fullpage.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -48,286 +48,300 @@
       </ul>
       <div id="mobile-link"><span></span><span></span><span></span></div>
     </header>
-    <div class="mainVisual page-section" id="home">
-      <div id="particles"></div>
-      <div class="mainVisual__text">
-        <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3.3s">Hello, I'm <span
-            class="mainVisual__title--highlight">Nguyen
-            Kim Thanh</span><br>I'm a front-end web developer.</h1>
-      </div>
-      <a class="mainVisual__mouse-icon fadeInDown wow" data-wow-delay="3.6s" href="#about">
-        <span class="icon-btn"></span>
-        <div class="arrow">
-          <span></span>
-          <span></span>
-        </div>
-      </a>
-    </div>
-    <div class="main-content">
-      <section id="about" class="about page-section">
-        <div class="about__list container">
-
-          <div class="grid about__item">
-            <div class="grid-md-6 about__pic">
-              <img
-                src="https://images.unsplash.com/photo-1608636142939-0a7da26aa494?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85"
-                alt="" />
-              <div class="about__img"></div>
-            </div>
-            <div class="grid-md-6 about__content">
-              <div class="section-ttl-block section-ttl-block--right">
-                <h2 class="h2-ttl-line">About Me</h2>
-                <span class="ttl-bar line-bar"></span>
-              </div>
-              <div class="about__content-text">
-                <p>Hi, I'm Thanh. A website developer, currently working at Ho Chi Minh city.</p>
-                <p>I have a passion for the beauty, whether simple or extravagant. I also love coding and design. As
-                  someone
-                  who likes to watch movies and listen to music to relax.</p>
-                <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.
-                </p>
-                <div class="about__text"></div>
-              </div>
-            </div>
+    <div id="pagescroll">
+      <section id="home" class="mainVisual section">
+        <div class="page-section">
+          <div id="particles"></div>
+          <div class="mainVisual__text">
+            <!-- <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3.3s">Hello, I'm <span
+              class="mainVisual__title--highlight">Nguyen
+              Kim Thanh</span><br>I'm a front-end web developer.</h1> -->
+            <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3.3s">Hello, I'm <span
+                class="mainVisual__title--highlight">World</span></h1>
           </div>
+          <a class="mainVisual__mouse-icon fadeInDown wow" data-wow-delay="3.6s" href="#about">
+            <span class="icon-btn"></span>
+            <div class="arrow">
+              <span></span>
+              <span></span>
+            </div>
+          </a>
         </div>
       </section>
-      <section id="skills" class="skills page-section">
-        <div class="container">
-          <div class="grid">
-            <div class="grid-md-6 skills__text">
-              <div class="section-ttl-block">
-                <span class="ttl-bar"></span>
-                <h2 class="h2-ttl-line">Skills</h2>
-              </div>
-              <div class="fadeInUp wow" data-wow-delay="1.5s">
-                <p>The main area of my expertise is front end development (client side of the web).</p>
-                <p>Worked on a multitude of web and print based projects for a range of clients providing Web Design
-                  (Photoshop, Adobe Xd) and Development (HTML, CSS, SASS, JS, jQuery, Bootstrap, Responsive Layouts,
-                  Browser
-                  compatibility).</p>
-                <p>Familiar frameworks like ReactJS, Angular2+.</p>
-              </div>
-            </div>
-            <div class="grid-md-6">
-              <div class="fadeInUp wow" data-wow-delay="1.5s">
-                <div id="myCanvasContainer">
-                  <canvas width="500" height="500" id="myCanvas">
-                    <p>Anything in here will be replaced on browsers that support the canvas element</p>
-                  </canvas>
+      <section id="about" class="about section">
+        <div class="page-section">
+          <div class="about__list container">
+            <div class="grid about__item">
+              <div class="grid-md-6 about__content">
+                <div class="section-ttl-block">
+                  <span class="ttl-bar line-bar"></span>
+                  <h2 class="h2-ttl-line">About Me</h2>
                 </div>
-                <div id="tags">
-                  <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/HTML">HTML 5</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/React_(web_framework)">ReactJS</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">Redux</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/AngularJS">Angular 2+</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Node.js">Node JS</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Git">Git</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Lodash">_lodash</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">SASS</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></li>
-                    <li><a href="http://gulpjs.com/">Gulp</a></li>
-                    <li><a href="https://www.npmjs.com/">npm</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/BEM">BEM</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Photoshop</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Firebase">Firebase</a></li>
-                  </ul>
+                <div class="about__content-text">
+                  <p>Hi, I'm Thanh. A website developer, currently working at Ho Chi Minh city.</p>
+                  <p>I have a passion for the beauty, whether simple or extravagant. I also love coding and design. As
+                    someone
+                    who likes to watch movies and listen to music to relax.</p>
+                  <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.
+                  </p>
+                  <a href="#" class="btn-link">Preview My CV <div class="icon-circle"></div></a>
+                  <div class="about__text"></div>
                 </div>
+              </div>
+              <div class="grid-md-6 about__pic">
+                <img
+                  src="https://images.unsplash.com/photo-1608636142939-0a7da26aa494?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85"
+                  alt="" />
+                <div class="about__img"></div>
               </div>
             </div>
           </div>
-          <div class="bg-block">
+          <!-- <div class="bg-block bg-block--left">
             <div class="bg-block__content"></div>
-          </div>
+          </div> -->
         </div>
       </section>
-      <section id="projects" class="portfolio page-section">
-        <div class="container">
-          <div class="section-ttl-block section-ttl-block--right">
-            <h2 class="h2-ttl-line">Projects</h2>
-            <span class="ttl-bar"></span>
-          </div>
-          <div class="grid portfolio__list">
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="contact page-section">
-        <div class="container">
-          <div class="section-ttl-block">
-            <span class="ttl-bar"></span>
-            <h2 class="h2-ttl-line">Contact</h2>
-          </div>
-          <div>
-            <div class="wow slideInRight">
-              <h3>Get in touch</h3>
-              <p>If you wanna get in touch, talk to me about a project collaboration or just say hi,<br> fill up the
-                awesome
-                form below or send an email to <a
-                  href="mailto:nguyenkimthanh901@gmail.com">nguyenkimthanh901@gmail.com</a>
-                and ~let's talk.</p>
+      <section id="skills" class="skills section">
+        <div class="page-section">
+          <div class="container">
+            <div class="grid grid-center">
+              <div class="grid-md-6 skills__text">
+                <div class="section-ttl-block">
+                  <span class="ttl-bar"></span>
+                  <h2 class="h2-ttl-line">Skills</h2>
+                </div>
+                <div class="fadeInUp wow" data-wow-delay="1.5s">
+                  <p>The main area of my expertise is front end development (client side of the web).</p>
+                  <p>Worked on a multitude of web and print based projects for a range of clients providing Web Design
+                    (Photoshop, Adobe Xd) and Development (HTML, CSS, SASS, JS, jQuery, Bootstrap, Responsive Layouts,
+                    Browser
+                    compatibility).</p>
+                  <p>Familiar frameworks like ReactJS, Angular2+.</p>
+                </div>
+              </div>
+              <div class="grid-md-6">
+                <div class="fadeInUp wow" data-wow-delay="1.5s">
+                  <div id="myCanvasContainer">
+                    <canvas width="500" height="500" id="myCanvas">
+                      <p>Anything in here will be replaced on browsers that support the canvas element</p>
+                    </canvas>
+                  </div>
+                  <div id="tags">
+                    <ul>
+                      <li><a href="https://en.wikipedia.org/wiki/HTML">HTML 5</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/React_(web_framework)">ReactJS</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">Redux</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/AngularJS">Angular 2+</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Node.js">Node JS</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Git">Git</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Lodash">_lodash</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">SASS</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></li>
+                      <li><a href="http://gulpjs.com/">Gulp</a></li>
+                      <li><a href="https://www.npmjs.com/">npm</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/BEM">BEM</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Photoshop</a></li>
+                      <li><a href="https://en.wikipedia.org/wiki/Firebase">Firebase</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <form class="contact__form wow fadeInUp">
-              <ul>
-                <li class="half">
-                  <input class="input__field input__field--hoshi" placeholder="Name" type="text" name="name"
-                    autocomplete="off">
-                  <label class="input__label input__label--hoshi"></label>
-                </li>
-                <li class="half">
-                  <input class="input__field input__field--hoshi" placeholder="Email" type="email" name="email"
-                    autocomplete="off">
-                  <label class="input__label input__label--hoshi"></label>
-                </li>
-                <li>
-                  <input class="input__field input__field--hoshi" placeholder="Subject" type="text" name="subject">
-                  <label class="input__label input__label--hoshi"></label>
-                </li>
-                <li>
-                  <textarea class="input__field--hoshi" placeholder="Message" name="msg"></textarea>
-                  <label class="input__label input__label--hoshi"></label>
-                </li>
-                <li><input id="submit" type="submit" class="flat-button"></li>
-              </ul>
-            </form>
+            <div class="bg-block bg-block--right">
+              <div class="bg-block__content"></div>
+            </div>
           </div>
-          <div class="wow fadeInLeft">
-            <h3>Let's get social</h3>
-            <ul class="contact__socical">
-              <li>
-                <a href="#" class="btn-1 btn-fb">
-                  <span>
-                    <svg class="i-svg" height="50" version="1.1" width="50" xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50" space="preserve" data-icon="facebook,">
-                      <path
-                        d="M27.845,47.469V27.81h8.426l1.404-8.425h-9.83v-4.213c0-2.81,1.406-4.213,4.213-4.213h4.213V2.531 c-1.405,0-4.55,0-7.021,0c-7.021,0-9.83,4.213-9.83,11.234v5.618h-8.425v8.424h8.425v19.661H27.845L27.845,47.469z"
-                        fill="#ffffff"></path>
-                    </svg>
-                    Facebook
-                  </span>
-                </a>
-              </li>
-              <li><a class="btn-2 btn-github" href="https://github.com/kthanhnguyen" target="_blank">
-                  <span class="span">
+        </div>
+      </section>
+      <section id="projects" class="portfolio section">
+        <div class="page-section">
+          <div class="container">
+            <div class="section-ttl-block section-ttl-block--right">
+              <h2 class="h2-ttl-line">Projects</h2>
+              <span class="ttl-bar"></span>
+            </div>
+            <div class="grid portfolio__list">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact section">
+        <div class="page-section">
+          <div class="container">
+            <div class="section-ttl-block">
+              <span class="ttl-bar"></span>
+              <h2 class="h2-ttl-line">Contact</h2>
+            </div>
+            <div>
+              <div class="wow slideInRight">
+                <h3>Get in touch</h3>
+                <p>If you wanna get in touch, talk to me about a project collaboration or just say hi,<br> fill up the
+                  awesome
+                  form below or send an email to <a
+                    href="mailto:nguyenkimthanh901@gmail.com">nguyenkimthanh901@gmail.com</a>
+                  and ~let's talk.</p>
+              </div>
+              <form class="contact__form wow fadeInUp">
+                <ul>
+                  <li class="half">
+                    <input class="input__field input__field--hoshi" placeholder="Name" type="text" name="name"
+                      autocomplete="off">
+                    <label class="input__label input__label--hoshi"></label>
+                  </li>
+                  <li class="half">
+                    <input class="input__field input__field--hoshi" placeholder="Email" type="email" name="email"
+                      autocomplete="off">
+                    <label class="input__label input__label--hoshi"></label>
+                  </li>
+                  <li>
+                    <input class="input__field input__field--hoshi" placeholder="Subject" type="text" name="subject">
+                    <label class="input__label input__label--hoshi"></label>
+                  </li>
+                  <li>
+                    <textarea class="input__field--hoshi" placeholder="Message" name="msg"></textarea>
+                    <label class="input__label input__label--hoshi"></label>
+                  </li>
+                  <li><input id="submit" type="submit" class="flat-button"></li>
+                </ul>
+              </form>
+            </div>
+            <div class="wow fadeInLeft">
+              <h3>Let's get social</h3>
+              <ul class="contact__socical">
+                <li>
+                  <a href="#" class="btn-1 btn-fb">
                     <span>
                       <svg class="i-svg" height="50" version="1.1" width="50" xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50" space="preserve" data-icon="facebook,">
                         <path
-                          d="M24.999,2.48c-12.75,0-23.087,10.338-23.087,23.09c0,10.199,6.613,18.854,15.791,21.907 c1.154,0.211,1.518-0.474,1.518-1.084c0-0.547,0.011-2.082,0-4.01c-6.422,1.398-7.753-3.038-7.753-3.038 c-1.048-2.671-2.562-3.377-2.562-3.377c-2.095-1.433,0.158-1.407,0.158-1.407c2.317,0.163,3.538,2.383,3.538,2.383 c2.059,3.522,5.403,2.505,6.717,1.916c0.21-1.491,0.808-2.51,1.468-3.087C15.66,35.188,10.27,33.211,10.27,24.361 c0-2.521,0.9-4.581,2.376-6.194c-0.239-0.584-1.031-2.932,0.226-6.112c0,0,1.939-0.62,6.349,2.369 c1.841-0.513,3.817-0.768,5.78-0.777c1.962,0.009,3.938,0.264,5.781,0.777c4.409-2.988,6.346-2.369,6.346-2.369 c1.258,3.18,0.466,5.528,0.229,6.112c1.478,1.613,2.373,3.673,2.373,6.194c0,8.872-5.397,10.823-10.543,11.392 c0.828,0.717,1.582,2.101,1.582,4.255c0,2.887,0,5.632,0,6.392c0,0.617,0.372,1.302,1.544,1.076 c9.167-3.059,15.776-11.708,15.776-21.905C48.089,12.818,37.75,2.48,24.999,2.48z"
+                          d="M27.845,47.469V27.81h8.426l1.404-8.425h-9.83v-4.213c0-2.81,1.406-4.213,4.213-4.213h4.213V2.531 c-1.405,0-4.55,0-7.021,0c-7.021,0-9.83,4.213-9.83,11.234v5.618h-8.425v8.424h8.425v19.661H27.845L27.845,47.469z"
                           fill="#ffffff"></path>
-                      </svg>GitHub
+                      </svg>
+                      Facebook
                     </span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a class="btn-3 btn-cv" role="button" href="/" target="_blank">
-                  <span class="span">
-                    <span>
-                      <svg class="i-svg" height="50" version="1.1" width="50" viewBox="0 0 512 512"
-                        xml:space="preserve">
-                        <g>
+                  </a>
+                </li>
+                <li><a class="btn-2 btn-github" href="https://github.com/kthanhnguyen" target="_blank">
+                    <span class="span">
+                      <span>
+                        <svg class="i-svg" height="50" version="1.1" width="50" xmlns="http://www.w3.org/2000/svg"
+                          preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50" space="preserve"
+                          data-icon="facebook,">
+                          <path
+                            d="M24.999,2.48c-12.75,0-23.087,10.338-23.087,23.09c0,10.199,6.613,18.854,15.791,21.907 c1.154,0.211,1.518-0.474,1.518-1.084c0-0.547,0.011-2.082,0-4.01c-6.422,1.398-7.753-3.038-7.753-3.038 c-1.048-2.671-2.562-3.377-2.562-3.377c-2.095-1.433,0.158-1.407,0.158-1.407c2.317,0.163,3.538,2.383,3.538,2.383 c2.059,3.522,5.403,2.505,6.717,1.916c0.21-1.491,0.808-2.51,1.468-3.087C15.66,35.188,10.27,33.211,10.27,24.361 c0-2.521,0.9-4.581,2.376-6.194c-0.239-0.584-1.031-2.932,0.226-6.112c0,0,1.939-0.62,6.349,2.369 c1.841-0.513,3.817-0.768,5.78-0.777c1.962,0.009,3.938,0.264,5.781,0.777c4.409-2.988,6.346-2.369,6.346-2.369 c1.258,3.18,0.466,5.528,0.229,6.112c1.478,1.613,2.373,3.673,2.373,6.194c0,8.872-5.397,10.823-10.543,11.392 c0.828,0.717,1.582,2.101,1.582,4.255c0,2.887,0,5.632,0,6.392c0,0.617,0.372,1.302,1.544,1.076 c9.167-3.059,15.776-11.708,15.776-21.905C48.089,12.818,37.75,2.48,24.999,2.48z"
+                            fill="#ffffff"></path>
+                        </svg>GitHub
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn-3 btn-cv" role="button" href="/" target="_blank">
+                    <span class="span">
+                      <span>
+                        <svg class="i-svg" height="50" version="1.1" width="50" viewBox="0 0 512 512"
+                          xml:space="preserve">
                           <g>
-                            <path
-                              d="M414.007,148.75c5.522,0,10-4.477,10-10V30c0-16.542-13.458-30-30-30h-364c-16.542,0-30,13.458-30,30v452 c0,16.542,13.458,30,30,30h364c16.542,0,30-13.458,30-30v-73.672c0-5.523-4.478-10-10-10c-5.522,0-10,4.477-10,10V482 c0,5.514-4.486,10-10,10h-364c-5.514,0-10-4.486-10-10V30c0-5.514,4.486-10,10-10h364c5.514,0,10,4.486,10,10v108.75 C404.007,144.273,408.485,148.75,414.007,148.75z">
-                            </path>
+                            <g>
+                              <path
+                                d="M414.007,148.75c5.522,0,10-4.477,10-10V30c0-16.542-13.458-30-30-30h-364c-16.542,0-30,13.458-30,30v452 c0,16.542,13.458,30,30,30h364c16.542,0,30-13.458,30-30v-73.672c0-5.523-4.478-10-10-10c-5.522,0-10,4.477-10,10V482 c0,5.514-4.486,10-10,10h-364c-5.514,0-10-4.486-10-10V30c0-5.514,4.486-10,10-10h364c5.514,0,10,4.486,10,10v108.75 C404.007,144.273,408.485,148.75,414.007,148.75z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M212.007,54c-50.729,0-92,41.271-92,92c0,26.317,11.11,50.085,28.882,66.869c0.333,0.356,0.687,0.693,1.074,1 c16.371,14.979,38.158,24.13,62.043,24.13c23.885,0,45.672-9.152,62.043-24.13c0.387-0.307,0.741-0.645,1.074-1 c17.774-16.784,28.884-40.552,28.884-66.869C304.007,95.271,262.736,54,212.007,54z M212.007,218 c-16.329,0-31.399-5.472-43.491-14.668c8.789-15.585,25.19-25.332,43.491-25.332c18.301,0,34.702,9.747,43.491,25.332 C243.405,212.528,228.336,218,212.007,218z M196.007,142v-6.5c0-8.822,7.178-16,16-16s16,7.178,16,16v6.5c0,8.822-7.178,16-16,16 S196.007,150.822,196.007,142z M269.947,188.683c-7.375-10.938-17.596-19.445-29.463-24.697c4.71-6.087,7.523-13.712,7.523-21.986 v-6.5c0-19.851-16.149-36-36-36s-36,16.149-36,36v6.5c0,8.274,2.813,15.899,7.523,21.986 c-11.867,5.252-22.088,13.759-29.463,24.697c-8.829-11.953-14.06-26.716-14.06-42.683c0-39.701,32.299-72,72-72s72,32.299,72,72 C284.007,161.967,278.776,176.73,269.947,188.683z">
-                            </path>
+                            <g>
+                              <path
+                                d="M212.007,54c-50.729,0-92,41.271-92,92c0,26.317,11.11,50.085,28.882,66.869c0.333,0.356,0.687,0.693,1.074,1 c16.371,14.979,38.158,24.13,62.043,24.13c23.885,0,45.672-9.152,62.043-24.13c0.387-0.307,0.741-0.645,1.074-1 c17.774-16.784,28.884-40.552,28.884-66.869C304.007,95.271,262.736,54,212.007,54z M212.007,218 c-16.329,0-31.399-5.472-43.491-14.668c8.789-15.585,25.19-25.332,43.491-25.332c18.301,0,34.702,9.747,43.491,25.332 C243.405,212.528,228.336,218,212.007,218z M196.007,142v-6.5c0-8.822,7.178-16,16-16s16,7.178,16,16v6.5c0,8.822-7.178,16-16,16 S196.007,150.822,196.007,142z M269.947,188.683c-7.375-10.938-17.596-19.445-29.463-24.697c4.71-6.087,7.523-13.712,7.523-21.986 v-6.5c0-19.851-16.149-36-36-36s-36,16.149-36,36v6.5c0,8.274,2.813,15.899,7.523,21.986 c-11.867,5.252-22.088,13.759-29.463,24.697c-8.829-11.953-14.06-26.716-14.06-42.683c0-39.701,32.299-72,72-72s72,32.299,72,72 C284.007,161.967,278.776,176.73,269.947,188.683z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M266.007,438h-54c-5.522,0-10,4.477-10,10s4.478,10,10,10h54c5.522,0,10-4.477,10-10S271.529,438,266.007,438z">
-                            </path>
+                            <g>
+                              <path
+                                d="M266.007,438h-54c-5.522,0-10,4.477-10,10s4.478,10,10,10h54c5.522,0,10-4.477,10-10S271.529,438,266.007,438z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M266.007,382h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,382,266.007,382z">
-                            </path>
+                            <g>
+                              <path
+                                d="M266.007,382h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,382,266.007,382z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M266.007,326h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,326,266.007,326z">
-                            </path>
+                            <g>
+                              <path
+                                d="M266.007,326h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,326,266.007,326z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M88.366,272.93c-1.859-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.211,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.87,1.86,4.439,2.93,7.07,2.93c2.64,0,5.21-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,274.79,88.366,272.93z">
-                            </path>
+                            <g>
+                              <path
+                                d="M88.366,272.93c-1.859-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.211,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.87,1.86,4.439,2.93,7.07,2.93c2.64,0,5.21-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,274.79,88.366,272.93z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M88.366,328.93c-1.869-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.2,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.87,1.86,4.439,2.93,7.07,2.93c2.64,0,5.21-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,330.79,88.366,328.93z">
-                            </path>
+                            <g>
+                              <path
+                                d="M88.366,328.93c-1.869-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.2,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.87,1.86,4.439,2.93,7.07,2.93c2.64,0,5.21-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,330.79,88.366,328.93z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M88.366,384.93c-1.869-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.2,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.859,1.86,4.439,2.93,7.07,2.93c2.64,0,5.22-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,386.79,88.366,384.93z">
-                            </path>
+                            <g>
+                              <path
+                                d="M88.366,384.93c-1.869-1.86-4.439-2.93-7.079-2.93c-2.631,0-5.2,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07 s1.069,5.21,2.93,7.07c1.859,1.86,4.439,2.93,7.07,2.93c2.64,0,5.22-1.07,7.079-2.93c1.86-1.86,2.931-4.44,2.931-7.07 S90.227,386.79,88.366,384.93z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M266.007,270h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,270,266.007,270z">
-                            </path>
+                            <g>
+                              <path
+                                d="M266.007,270h-142c-5.522,0-10,4.477-10,10s4.478,10,10,10h142c5.522,0,10-4.477,10-10S271.529,270,266.007,270z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g>
                           <g>
-                            <path
-                              d="M491.002,130.32c-9.715-5.609-21.033-7.099-31.871-4.196c-10.836,2.904-19.894,9.854-25.502,19.569L307.787,363.656 c-0.689,1.195-1.125,2.52-1.278,3.891l-8.858,79.344c-0.44,3.948,1.498,7.783,4.938,9.77c1.553,0.896,3.278,1.34,4.999,1.34 c2.092,0,4.176-0.655,5.931-1.948l64.284-47.344c1.111-0.818,2.041-1.857,2.73-3.052l125.841-217.963 C517.954,167.638,511.058,141.9,491.002,130.32z M320.063,426.394l4.626-41.432l28.942,16.71L320.063,426.394z M368.213,386.996 l-38.105-22l100.985-174.91l38.105,22L368.213,386.996z M489.054,177.693l-9.857,17.073l-38.105-22l9.857-17.073 c2.938-5.089,7.682-8.729,13.358-10.25c5.678-1.522,11.606-0.74,16.694,2.198c5.089,2.938,8.729,7.682,10.25,13.358 C492.772,166.675,491.992,172.604,489.054,177.693z">
-                            </path>
+                            <g>
+                              <path
+                                d="M491.002,130.32c-9.715-5.609-21.033-7.099-31.871-4.196c-10.836,2.904-19.894,9.854-25.502,19.569L307.787,363.656 c-0.689,1.195-1.125,2.52-1.278,3.891l-8.858,79.344c-0.44,3.948,1.498,7.783,4.938,9.77c1.553,0.896,3.278,1.34,4.999,1.34 c2.092,0,4.176-0.655,5.931-1.948l64.284-47.344c1.111-0.818,2.041-1.857,2.73-3.052l125.841-217.963 C517.954,167.638,511.058,141.9,491.002,130.32z M320.063,426.394l4.626-41.432l28.942,16.71L320.063,426.394z M368.213,386.996 l-38.105-22l100.985-174.91l38.105,22L368.213,386.996z M489.054,177.693l-9.857,17.073l-38.105-22l9.857-17.073 c2.938-5.089,7.682-8.729,13.358-10.25c5.678-1.522,11.606-0.74,16.694,2.198c5.089,2.938,8.729,7.682,10.25,13.358 C492.772,166.675,491.992,172.604,489.054,177.693z">
+                              </path>
+                            </g>
                           </g>
-                        </g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                      </svg> Preview My CV</span>
-                  </span>
-                </a>
-              </li>
-            </ul>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                          <g></g>
+                        </svg> Preview My CV</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
     </div>
-
-    <div id="pageToTop" class="pageToTop"></div>
   </div>
 
   <div class="modal-block"></div>
@@ -338,6 +352,7 @@
   <script src="./js/ScrollTrigger.min.js" type="text/javascript"></script>
   <script src="./js/particles.min.js" type="text/javascript"></script>
   <script src="./js/jquery.tagcanvas.min.js" type="text/javascript"></script>
+  <script src="./js/scroll-overflow.js"></script>
   <script src="./js/fullpage.min.js"></script>
   <script src="./js/slick.js" type="text/javascript"></script>
   <script src="./js/wow.js"></script>

@@ -1,9 +1,142 @@
-window.addEventListener('load', function () {
-  animation();
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", function () {
+  loadingScreen();
+
+  aciveMenu();
+  window.addEventListener("scroll", aciveMenu);
+
+  menuMobile();
+  window.addEventListener("resize", menuMobile);
+
   mainVisual();
+
+  effectTitle();
+  animation();
+
+  bgBlock();
   tagSkilks();
+
   getDataProject();
-})
+
+  fullPageScroll();
+});
+
+function loadingScreen() {
+  var loadingScreen = document.getElementById("loading");
+  var progressBar = document.getElementById("progress-bar_bg");
+
+  setTimeout(() => {
+    TweenLite.fromTo(
+      loadingScreen,
+      0.6,
+      {
+        immediateRender: false,
+        x: "0%",
+        ease: "Power4.easeIn",
+      },
+      {
+        x: "100%",
+      },
+      0
+    );
+  }, 2500);
+
+  TweenLite.fromTo(
+    progressBar,
+    1,
+    { width: 0 },
+    { width: "100%", duration: 1 }
+  );
+}
+
+function aciveMenu() {
+  const links = document.querySelectorAll(".header__menu a");
+  const sections = document.querySelectorAll(".section");
+
+  let index = sections.length;
+
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
+
+  links.forEach((link) => link.classList.remove("active"));
+  links[index].classList.add("active");
+
+  for (const link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+      const offsetTop = document.querySelector(href).offsetTop;
+
+      scroll({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    });
+  }
+}
+
+function menuMobile() {
+  var btnMoblie = document.getElementById("mobile-link");
+  var nav = document.querySelector(".header__menu");
+  var vw = window.innerWidth,
+    delay_time = 0;
+  var elm = document.querySelectorAll(".header__menu li");
+
+  btnMoblie.addEventListener("click", function () {
+    this.classList.toggle("active");
+    nav.classList.toggle("active");
+
+    if (btnMoblie.classList.contains("active")) {
+      TweenMax.to(nav, 0.5, {
+        x: -vw,
+        ease: Expo.easeInOut,
+      });
+      elm.forEach((item) => {
+        TweenMax.to(item, 1.2, {
+          x: -vw,
+          scaleX: 1,
+          delay: delay_time,
+          ease: Expo.easeInOut,
+        });
+        delay_time += 0.04;
+        item.addEventListener("click", () => {
+          document.body.className = "";
+        });
+      });
+    } else {
+      TweenMax.to(nav, 0.8, {
+        x: 0,
+        ease: Expo.easeInOut,
+      });
+      elm.forEach((item) => {
+        TweenMax.to(item, 1, {
+          x: 0,
+          delay: delay_time,
+          ease: Expo.easeInOut,
+        });
+        delay_time += 0.02;
+      });
+    }
+  });
+}
+
+function effectTitle() {
+  gsap.utils.toArray(".page-section").forEach((container) => {
+    const lineBar = container.querySelector(".ttl-bar");
+
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "expo",
+      },
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+      },
+    });
+    timeline.fromTo(lineBar, { width: 0 }, { width: "120px" });
+  });
+}
 
 function animation() {
   gsap.utils.toArray(".about__item").forEach((container) => {
@@ -23,15 +156,16 @@ function animation() {
     });
     timeline
       .to(rvimg, {
-        xPercent: -100,
+        xPercent: 100,
       })
       .to(
-        rvtext, {
-        xPercent: 100,
-        ease: "power2.inOut",
-      },
+        rvtext,
+        {
+          xPercent: -100,
+          ease: "power2.inOut",
+        },
         "-=2"
-      )
+      );
     // .fromTo(
     //   image, {
     //   scale: 2,
@@ -41,9 +175,12 @@ function animation() {
     //   0.3
     // );
   });
+}
 
-
-  var bgBlock = document.querySelector(".bg-block__content");
+function bgBlock() {
+  // var bgBlockLeft = document.querySelector(".bg-block--left .bg-block__content");
+  // var bg = document.querySelector(".bg-block--right");
+  var bgBlockRight = document.querySelector("bg-block__content");
 
   const timeBg = gsap.timeline({
     defaults: {
@@ -55,18 +192,19 @@ function animation() {
       start: "top center",
     },
   });
-  timeBg
-    .fromTo(
-      bgBlock, {
+  timeBg.fromTo(
+    bgBlockRight,
+    {
       immediateRender: false,
       x: "100%",
       ease: "Power4.easeIn",
     },
-      {
-        x: "0",
-      },
-      0.5
-    );
+    {
+      x: "0",
+    },
+    0.5
+  );
+
 }
 
 function mainVisual() {
@@ -183,22 +321,23 @@ function mainVisual() {
 
   particlesJS("particles", particlesJSON);
 
-  document.querySelector(".mainVisual__mouse-icon").addEventListener("click", function (e) {
-    e.preventDefault();
-    const href = this.getAttribute("href");
-    const offsetTop = document.querySelector(href).offsetTop;
+  document
+    .querySelector(".mainVisual__mouse-icon")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+      const offsetTop = document.querySelector(href).offsetTop;
 
-    scroll({
-      top: offsetTop,
-      behavior: "smooth"
+      scroll({
+        top: offsetTop,
+        behavior: "smooth",
+      });
     });
-  })
 }
-
 
 function tagSkilks() {
   try {
-    TagCanvas.Start('myCanvas', 'tags', {
+    TagCanvas.Start("myCanvas", "tags", {
       textColour: "#e31b6d",
       outlineThickness: 0.5,
       outlineColour: "#FE0853",
@@ -218,7 +357,7 @@ function tagSkilks() {
     });
   } catch (e) {
     // something went wrong, hide the canvas container
-    document.getElementById('myCanvasContainer').style.display = 'none';
+    document.getElementById("myCanvasContainer").style.display = "none";
   }
 }
 function getItem(list) {
@@ -240,15 +379,26 @@ function getDataProject() {
     var projectItem = _json.map((item) => {
       second += 0.1;
       return (
-        '<div class="grid-md-4 wow zoomIn" data-wow-delay="'+ second +'s">' +
-        '<div class="image item" data-modal="modal-' + item.id + '">' +
+        '<div class="grid-md-4 wow fadeInUp" data-wow-delay="' +
+        second +
+        's">' +
+        '<div class="image item" data-modal="modal-' +
+        item.id +
+        '">' +
         '<div class="bar">' +
-        "<h2>" + item.name + "</h2><i></i>" + "</div>" +
+        "<h2>" +
+        item.name +
+        "</h2><i></i>" +
+        "</div>" +
         '<div class="main">' +
-        '  <div class="back"><img src="' + item.imgMain + '" alt=""></div>' +
+        '  <div class="back"><img src="' +
+        item.imgMain +
+        '" alt=""></div>' +
         ' <div class="tags">' +
         "    <div>" +
-        "      <ul>" + (getItem(item.tags)).join("") + "</ul>" +
+        "      <ul>" +
+        getItem(item.tags).join("") +
+        "</ul>" +
         "    </div>" +
         "  </div>" +
         '  <div class="imgs"></div>' +
@@ -266,7 +416,13 @@ function getDataProject() {
 
 function getModalSlider(id, list) {
   var rs = list.map((i) => {
-    return '<div class="detail__slide-item"><img src="/images/project/' + id + '/' + i.imgname + '.png" alt=""></div>';
+    return (
+      '<div class="detail__slide-item"><img src="/images/project/' +
+      id +
+      "/" +
+      i.imgname +
+      '.png" alt=""></div>'
+    );
   });
   return rs;
 }
@@ -301,12 +457,18 @@ function openModal() {
         "          </svg>VISITS THIS WEBSITE" +
         "        </a>" +
         "      </div>" +
-        '      <div class="detail__slide">' + (getModalSlider(item.id, item.listImgs)).join("") + '</div>' +
+        '      <div class="detail__slide">' +
+        getModalSlider(item.id, item.listImgs).join("") +
+        "</div>" +
         '      <div class="detail__info">' +
         "        <h2>About this project</h2>" +
-        "        <p>" + item.about.aboutTop + "</p>" +
+        "        <p>" +
+        item.about.aboutTop +
+        "</p>" +
         "        <hr>" +
-        "        <p>" + item.about.aboutBottom + "</p>" +
+        "        <p>" +
+        item.about.aboutBottom +
+        "</p>" +
         "      </div>" +
         '      <div class="detail__info">' +
         "        <h2>Technical Sheet</h2>" +
@@ -338,7 +500,6 @@ function openModal() {
     });
   });
 
-
   var btn = document.querySelectorAll(".portfolio .item");
 
   for (var i = 0; i < btn.length; i++) {
@@ -351,33 +512,49 @@ function openModal() {
       document.body.style.paddingRight = "17px";
 
       /* close modal */
-      var modals = document.querySelectorAll('.modal');
-      var spans = document.querySelectorAll('.modal__close');
+      var modals = document.querySelectorAll(".modal");
+      var spans = document.querySelectorAll(".modal__close");
       for (var i = 0; i < spans.length; i++) {
         spans[i].onclick = function () {
-          modals.forEach(index => {
-            if (index.classList.contains('modal--open')) {
+          modals.forEach((index) => {
+            if (index.classList.contains("modal--open")) {
               index.classList.add("modal--out");
               index.classList.remove("modal--open");
               document.body.classList.remove("modal-active");
               document.body.style.paddingRight = "0";
             }
-          })
-        }
+          });
+        };
 
         window.onclick = function (event) {
-          if (event.target.classList.contains('modal__background')) {
-            modals.forEach(index => {
-              if (index.classList.contains('modal--open')) {
+          if (event.target.classList.contains("modal__background")) {
+            modals.forEach((index) => {
+              if (index.classList.contains("modal--open")) {
                 index.classList.add("modal--out");
                 index.classList.remove("modal--open");
                 document.body.classList.remove("modal-active");
                 document.body.style.paddingRight = "0";
               }
-            })
+            });
           }
-        }
+        };
       }
-    }
+    };
+  }
+}
+
+function fullPageScroll() {
+  if ($("#pagescroll").length > 0) {
+    $("#pagescroll").fullpage({
+      navigation: false,
+      autoScrolling: true,
+      scrollBar: true,
+      animateAnchor: true,
+      css3: true,
+      verticalCentered: true,
+      afterRender: function (index) {
+        new WOW().init();
+      },
+    });
   }
 }
