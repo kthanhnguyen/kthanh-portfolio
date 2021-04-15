@@ -1,14 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
-
 window.addEventListener("load", function () {
-  // loadingScreen();
-
-  aciveMenu();
-  window.addEventListener("scroll", aciveMenu);
-
-  menuMobile();
-  window.addEventListener("resize", menuMobile);
-
   mainVisual();
 
   effectTitle();
@@ -21,105 +11,6 @@ window.addEventListener("load", function () {
 
   fullPageScroll();
 });
-
-function loadingScreen() {
-  var loadingScreen = document.getElementById("loading");
-  var progressBar = document.getElementById("progress-bar_bg");
-
-  setTimeout(() => {
-    TweenLite.fromTo(
-      loadingScreen,
-      0.6, {
-        immediateRender: false,
-        x: "0%",
-        ease: "Power4.easeIn",
-      }, {
-        x: "100%",
-      },
-      0
-    );
-  }, 2500);
-
-  TweenLite.fromTo(
-    progressBar,
-    1, {
-      width: 0
-    }, {
-      width: "100%",
-      duration: 1
-    }
-  );
-}
-
-function aciveMenu() {
-  const links = document.querySelectorAll(".header__menu a");
-  const sections = document.querySelectorAll(".section");
-
-  let index = sections.length;
-
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-  links.forEach((link) => link.classList.remove("active"));
-  links[index].classList.add("active");
-
-  for (const link of links) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const href = this.getAttribute("href");
-      const offsetTop = document.querySelector(href).offsetTop;
-
-      scroll({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    });
-  }
-}
-
-function menuMobile() {
-  var btnMoblie = document.getElementById("mobile-link");
-  var nav = document.querySelector(".header__menu");
-  var vw = window.innerWidth,
-    delay_time = 0;
-  var elm = document.querySelectorAll(".header__menu li");
-
-  btnMoblie.addEventListener("click", function () {
-    this.classList.toggle("active");
-    nav.classList.toggle("active");
-
-    if (btnMoblie.classList.contains("active")) {
-      TweenMax.to(nav, 0.5, {
-        x: -vw,
-        ease: Expo.easeInOut,
-      });
-      elm.forEach((item) => {
-        TweenMax.to(item, 1.2, {
-          x: -vw,
-          scaleX: 1,
-          delay: delay_time,
-          ease: Expo.easeInOut,
-        });
-        delay_time += 0.04;
-        item.addEventListener("click", () => {
-          document.body.className = "";
-        });
-      });
-    } else {
-      TweenMax.to(nav, 0.8, {
-        x: 0,
-        ease: Expo.easeInOut,
-      });
-      elm.forEach((item) => {
-        TweenMax.to(item, 1, {
-          x: 0,
-          delay: delay_time,
-          ease: Expo.easeInOut,
-        });
-        delay_time += 0.02;
-      });
-    }
-  });
-}
 
 function effectTitle() {
   gsap.utils.toArray(".page-section").forEach((container) => {
@@ -377,41 +268,44 @@ function getDataProject() {
   $.getJSON(jsonPath, function (data) {
     _json = data;
 
-    var projectBody = document.querySelector(".portfolio__list");
+    var projectBody = document.querySelector(".portfolio__pro-list");
     var second = 0;
-    var projectItem = _json.map((item) => {
+    var mapSort = _json.sort((a, b) => b.id -  a.id);
+    var mapLimit = mapSort.limit(6);
+
+    var projectItem = mapLimit.map((item) => {
       second += 0.1;
       return (
-        '<div class="grid-md-4 wow fadeInUp" data-wow-delay="' +
-        second +
-        's">' +
-        '<div class="image item" data-modal="modal-' +
-        item.id +
-        '">' +
-        '<div class="bar">' +
-        "<h2>" +
-        item.name +
-        "</h2><i></i>" +
-        "</div>" +
-        '<div class="main">' +
-        '  <div class="back"><img src="' +
-        item.imgMain +
-        '" alt=""></div>' +
-        ' <div class="tags">' +
-        "    <div>" +
-        "      <ul>" +
-        getItem(item.tags).join("") +
-        "</ul>" +
-        "    </div>" +
-        "  </div>" +
-        '  <div class="imgs"></div>' +
-        " </div>" +
-        "</div>" +
-        "</div>"
+        '<div class="grid-md-4 wow fadeInUp" data-wow-delay="' + second + 's">' +
+                '<div class="pro-list__item" data-modal="modal-' + item.id + '">' +
+                '<div class="screen"><img src="/images/project/' + item.id + '/main.png" alt="" class="screen-img"></div>' +
+                '<p class="pro-name">' + item.name + '</p>' +
+                '</div>' +
+                '</div>'
       );
     });
 
     projectBody.innerHTML += projectItem.join("");
+
+    var itemImg = document.querySelectorAll(".pro-list__item");
+    var imgs = document.querySelectorAll('.screen-img');
+  
+    for (var i = 0; i < itemImg.length; i++){
+      itemImg[i].onmouseout = function(){
+        imgs.forEach((index) => {
+          let imgHeight = index.height;
+          index.style.transitionDuration = 0.005 * imgHeight + "s"; 
+        })
+        
+      };
+      itemImg[i].onmouseover = function(){
+        imgs.forEach((index) => {
+          let imgHeight = index.height;
+          index.style.transitionDuration = 0.001 * imgHeight + "s";
+          
+        })
+      };
+    }
 
     openModal();
   });
@@ -503,7 +397,7 @@ function openModal() {
     });
   });
 
-  var btn = document.querySelectorAll(".portfolio .item");
+  var btn = document.querySelectorAll(".portfolio__pro-list .pro-list__item");
 
   for (var i = 0; i < btn.length; i++) {
     btn[i].onclick = function (e) {

@@ -2,7 +2,8 @@
   position: relative;
   overflow: hidden;
   .section-ttl-block {
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
   }
   &__item {
     overflow: hidden;
@@ -34,6 +35,12 @@
     padding-right: 40px;
     &-text {
       position: relative;
+    }
+  }
+  &__btn {
+    margin-top: 20px;
+    a {
+      margin: 0;
     }
   }
 }

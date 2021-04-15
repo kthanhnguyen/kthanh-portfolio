@@ -8,7 +8,7 @@
   transform: scale(0);
   z-index: 1060;
   &-active {
-    overflow: hidden;
+    overflow: hidden !important;
     .modal {
       display: block;
       overflow-x: hidden;
