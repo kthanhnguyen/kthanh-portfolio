@@ -17,13 +17,15 @@ function skip(c){
 Array.prototype.skip = skip;
 
 window.addEventListener("load", function () {
-  // loadingScreen();
+  loadingScreen();
 
   aciveMenu();
   window.addEventListener("scroll", aciveMenu);
 
   menuMobile();
   window.addEventListener("resize", menuMobile);
+
+  effectTitle();
 });
 
 function loadingScreen() {
@@ -122,5 +124,27 @@ function menuMobile() {
         delay_time += 0.02;
       });
     }
+  });
+}
+
+function effectTitle() {
+  gsap.utils.toArray(".page-section").forEach((container) => {
+    const lineBar = container.querySelector(".ttl-bar");
+
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "expo",
+      },
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+      },
+    });
+    timeline.fromTo(lineBar, {
+      width: 0
+    }, {
+      width: "120px"
+    });
   });
 }

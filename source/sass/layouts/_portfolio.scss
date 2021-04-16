@@ -279,7 +279,7 @@
     .pro-list__item {
       display: block;
       margin: 10px;
-      cursor: pointer;
+      // cursor: pointer;
       .screen {
         position: relative;
         display: block;
@@ -317,3 +317,8 @@
   }
 }
 
+.projects {
+  .page-section {
+    margin-left: 0;
+  }
+}
