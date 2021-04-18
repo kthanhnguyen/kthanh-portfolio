@@ -1,16 +1,20 @@
 gsap.registerPlugin(ScrollTrigger);
 
-function limit(c){
-  return this.filter((x,i)=>{
-      if(i<=(c-1)){return true}
+function limit(c) {
+  return this.filter((x, i) => {
+    if (i <= (c - 1)) {
+      return true
+    }
   })
 }
-  
-Array.prototype.limit= limit;
 
-function skip(c){
-  return this.filter((x,i)=>{
-  if(i>(c-1)){return true}
+Array.prototype.limit = limit;
+
+function skip(c) {
+  return this.filter((x, i) => {
+    if (i > (c - 1)) {
+      return true
+    }
   })
 }
 
@@ -28,13 +32,22 @@ window.addEventListener("load", function () {
   effectTitle();
 });
 
+
+
+
+
 function loadingScreen() {
-  var loadingScreen = document.getElementById("loading");
+
+
+  var loading = document.getElementById("loading");
   var progressBar = document.getElementById("progress-bar_bg");
+
+
+
 
   setTimeout(() => {
     TweenLite.fromTo(
-      loadingScreen,
+      loading,
       0.6, {
         immediateRender: false,
         x: "0%",
@@ -55,6 +68,8 @@ function loadingScreen() {
       duration: 1
     }
   );
+
+
 }
 
 function aciveMenu() {

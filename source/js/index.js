@@ -249,18 +249,18 @@ function getDataProject() {
 
     var projectBody = document.querySelector(".portfolio__pro-list");
     var second = 0;
-    var mapSort = _json.sort((a, b) => b.id -  a.id);
+    var mapSort = _json.sort((a, b) => b.id - a.id);
     var mapLimit = mapSort.limit(6);
 
     var projectItem = mapLimit.map((item) => {
       second += 0.1;
       return (
         '<div class="grid-md-4 wow fadeInUp" data-wow-delay="' + second + 's">' +
-                '<div class="pro-list__item">' +
-                '<div class="screen"><img src="/images/project/' + item.id + '/main.png" alt="" class="screen-img"></div>' +
-                '<p class="pro-name">' + item.name + '</p>' +
-                '</div>' +
-                '</div>'
+        '<div class="pro-list__item">' +
+        '<div class="screen"><img src="/images/project/' + item.id + '/main.png" alt="" class="screen-img"></div>' +
+        '<p class="pro-name">' + item.name + '</p>' +
+        '</div>' +
+        '</div>'
       );
     });
 
@@ -268,20 +268,20 @@ function getDataProject() {
 
     var itemImg = document.querySelectorAll(".pro-list__item");
     var imgs = document.querySelectorAll('.screen-img');
-  
-    for (var i = 0; i < itemImg.length; i++){
-      itemImg[i].onmouseout = function(){
+
+    for (var i = 0; i < itemImg.length; i++) {
+      itemImg[i].onmouseout = function () {
         imgs.forEach((index) => {
           let imgHeight = index.height;
-          index.style.transitionDuration = 0.005 * imgHeight + "s"; 
+          index.style.transitionDuration = 0.005 * imgHeight + "s";
         })
-        
+
       };
-      itemImg[i].onmouseover = function(){
+      itemImg[i].onmouseover = function () {
         imgs.forEach((index) => {
           let imgHeight = index.height;
           index.style.transitionDuration = 0.001 * imgHeight + "s";
-          
+
         })
       };
     }
