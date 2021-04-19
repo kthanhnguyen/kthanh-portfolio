@@ -102,6 +102,20 @@
   }
 }
 
+/* ============ display ============ */
+.pc-show {
+  display: block;
+  @include mediaQuery("md") {
+    display: none;
+  }
+}
+.sp-show {
+  display: none;
+  @include mediaQuery("md") {
+    display: block;
+  }
+}
+
 /* ============ text ============ */
 ._center {
   text-align: center;
