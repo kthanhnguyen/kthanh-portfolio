@@ -23,7 +23,7 @@ function aciveMenu() {
 
   let index = sections.length;
 
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
 
   links.forEach((link) => link.classList.remove("active"));
   links[index].classList.add("active");
@@ -367,11 +367,14 @@ function getDataProject() {
 function fullPageScroll() {
   if ($("#pagescroll").length > 0) {
     $("#pagescroll").fullpage({
+      anchors: ['home', 'about', 'skills', 'projects', 'contact'],
       navigation: false,
       autoScrolling: true,
       scrollBar: true,
       verticalCentered: true,
       responsiveWidth: 768,
+      animateAnchor: true,
+      lockAnchors: true,
       afterRender: function (index) {
         wow = new WOW(
           {
@@ -379,7 +382,7 @@ function fullPageScroll() {
           }
         )
         wow.init();
-      },
+      }
     });
   }
 }

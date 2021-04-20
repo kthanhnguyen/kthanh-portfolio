@@ -1,6 +1,10 @@
 window.addEventListener("load", function () {
   getDataProject();
 
+  $('.menu-toggle').on('click', function(){
+    $('body').toggleClass('open');
+  });
+
 });
 
 function getItem(list) {
