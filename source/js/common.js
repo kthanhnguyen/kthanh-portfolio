@@ -7,7 +7,6 @@ function limit(c) {
     }
   })
 }
-
 Array.prototype.limit = limit;
 
 function skip(c) {
@@ -17,17 +16,53 @@ function skip(c) {
     }
   })
 }
-
 Array.prototype.skip = skip;
 
-window.addEventListener("load", function () {
-  loadingScreen();
 
-  effectTitle();
-});
+/* Header menu page child */
+const menuChild = function() {
+  const menu = document.querySelector(".menu-toggle");
+  menu.addEventListener("click", function(){
+    document.body.classList.toggle("open");
+  })
 
+  var header = document.querySelector(".header-child");
+  var sticky = header.offsetTop;
 
-function loadingScreen() {
+  window.onscroll = function() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("header-child--sticky");
+    } else {
+      header.classList.remove("header-child--sticky");
+    }
+  };
+}
+
+/** Effect Title */
+const effectTitle = function(time) {
+  gsap.utils.toArray(".page-section").forEach((container) => {
+    const lineBar = container.querySelector(".ttl-bar");
+
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "expo",
+      },
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+      },
+    });
+    timeline.fromTo(lineBar, {
+      width: 0
+    }, {
+      width: "120px"
+    }, time);
+  });
+}
+
+/** Loading screen */
+const loadingScreen = function() {
   var loading = document.getElementById("loading");
   var progressBar = document.getElementById("progress-bar_bg");
 
@@ -57,25 +92,27 @@ function loadingScreen() {
 }
 
 
+/** Loading Wow.js */
+const runWow = function() {
+  wow = new WOW(
+    {
+      mobile: false,
+    }
+  )
+  wow.init();
+}
 
-function effectTitle() {
-  gsap.utils.toArray(".page-section").forEach((container) => {
-    const lineBar = container.querySelector(".ttl-bar");
-
-    const timeline = gsap.timeline({
-      defaults: {
-        duration: 2,
-        ease: "expo",
-      },
-      scrollTrigger: {
-        trigger: container,
-        start: "top center",
-      },
-    });
-    timeline.fromTo(lineBar, {
-      width: 0
-    }, {
-      width: "120px"
-    });
+/** function load projects */
+const getItem = function(list) {
+  var rs = list.map((i) => {
+    return "<li>" + i.tagname + "</li>";
   });
+  return rs;
+}
+
+const getTech = function(list) {
+  var rs = list.map((i) => {
+    return "<li>" + i.technicalName + "</li>";
+  });
+  return rs;
 }

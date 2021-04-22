@@ -1,18 +1,13 @@
 window.addEventListener("load", function () {
+  loadingScreen();
+  effectTitle(3.2);
+
+  menuChild();
+
+  runWow();
+
   getDataProject();
-
-  $('.menu-toggle').on('click', function(){
-    $('body').toggleClass('open');
-  });
-
 });
-
-function getItem(list) {
-  var rs = list.map((i) => {
-    return "<li>" + i.tagname + "</li>";
-  });
-  return rs;
-}
 
 function getDataProject() {
   var jsonPath = "/data/data.json";
@@ -22,7 +17,7 @@ function getDataProject() {
     _json = data;
 
     var projectBody = document.querySelector(".portfolio__list");
-    var second = 0;
+    var second = 2.5;
     var mapSort = _json.sort((a, b) => b.id -  a.id);
 
     var projectItem = mapSort.map((item) => {

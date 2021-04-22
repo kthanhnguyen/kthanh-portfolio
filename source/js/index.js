@@ -1,4 +1,7 @@
 window.addEventListener("load", function () {
+  loadingScreen();
+  effectTitle(0);
+
   aciveMenu();
   window.addEventListener("scroll", aciveMenu);
 
@@ -307,13 +310,6 @@ function tagSkilks() {
   }
 }
 
-function getItem(list) {
-  var rs = list.map((i) => {
-    return "<li>" + i.tagname + "</li>";
-  });
-  return rs;
-}
-
 function getDataProject() {
   var jsonPath = "/data/data.json";
   var _json = "";
@@ -375,13 +371,8 @@ function fullPageScroll() {
       responsiveWidth: 768,
       animateAnchor: true,
       lockAnchors: true,
-      afterRender: function (index) {
-        wow = new WOW(
-          {
-            mobile: false,
-          }
-        )
-        wow.init();
+      afterRender: function () {
+        runWow();
       }
     });
   }
