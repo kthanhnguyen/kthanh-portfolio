@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
 
   mainVisual();
 
-  animation();
+  aboutAnimation();
 
   bgBlock();
   tagSkilks();
@@ -90,7 +90,7 @@ function menuMobile() {
   });
 }
 
-function animation() {
+function aboutAnimation() {
   gsap.utils.toArray(".about__item").forEach((container) => {
     const rvimg = container.querySelector(".about__img");
     const rvtext = container.querySelector(".about__text");
@@ -371,6 +371,17 @@ function fullPageScroll() {
       responsiveWidth: 768,
       animateAnchor: true,
       lockAnchors: true,
+      afterLoad: function(anchorLink, index) {
+        if(index.anchor === "projects") {
+          var imgs = document.querySelectorAll('.screen-img');
+      
+          imgs.forEach((index) => {
+            let imgFirHeight = index.height;
+            index.style.transitionDuration = 0.005 * imgFirHeight + "s";
+          })
+      
+        }
+      },
       afterRender: function () {
         runWow();
       }

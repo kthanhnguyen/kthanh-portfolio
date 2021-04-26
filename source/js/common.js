@@ -25,23 +25,13 @@ const menuChild = function() {
   menu.addEventListener("click", function(){
     document.body.classList.toggle("open");
   })
-
-  var header = document.querySelector(".header-child");
-  var sticky = header.offsetTop;
-
-  window.onscroll = function() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("header-child--sticky");
-    } else {
-      header.classList.remove("header-child--sticky");
-    }
-  };
 }
 
 /** Effect Title */
 const effectTitle = function(time) {
   gsap.utils.toArray(".page-section").forEach((container) => {
     const lineBar = container.querySelector(".ttl-bar");
+    const title = container.querySelector(".h2-ttl-line");
 
     const timeline = gsap.timeline({
       defaults: {
@@ -58,6 +48,11 @@ const effectTitle = function(time) {
     }, {
       width: "120px"
     }, time);
+    timeline.fromTo(title, {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1
+    }, time + 0.3);
   });
 }
 

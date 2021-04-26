@@ -52,11 +52,15 @@
   min-height: 100vh;
   padding: 4em 0 5em;
   margin-left: 60px;
+  &-child {
+    min-height: auto;
+    padding: 3em 0 4em !important;
+    margin-left: 0;
+  }
   @include mediaQuery("md") {
     margin-left: 0;
   }
 }
-
 .bg-block {
   position: absolute;
   top: 0;

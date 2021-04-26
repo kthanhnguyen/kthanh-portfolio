@@ -73,7 +73,7 @@
     }
     .main {
       background-size: cover;
-      padding-top: 45%;
+      padding-top: 50%;
       position: relative;
       background-position: center center;
       display: block;
@@ -168,47 +168,14 @@
         -o-transition: -o-transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5);
         -webkit-transition: -webkit-transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5);
         transition: transform 0.285s cubic-bezier(0.5, 1.5, 0.5, 1.5);
-        &:nth-child(1) {
-          -moz-transition-delay: 0.45s, 0.45s;
-          -o-transition-delay: 0.45s, 0.45s;
-          -webkit-transition-delay: 0.45s, 0.45s;
-          transition-delay: 0.45s, 0.45s;
-          z-index: 12;
-        }
-        &:nth-child(2) {
-          -moz-transition-delay: 0.49s, 0.49s;
-          -o-transition-delay: 0.49s, 0.49s;
-          -webkit-transition-delay: 0.49s, 0.49s;
-          transition-delay: 0.49s, 0.49s;
-          z-index: 11;
-        }
-        &:nth-child(3) {
-          -moz-transition-delay: 0.53s, 0.53s;
-          -o-transition-delay: 0.53s, 0.53s;
-          -webkit-transition-delay: 0.53s, 0.53s;
-          transition-delay: 0.53s, 0.53s;
-          z-index: 10;
-        }
-        &:nth-child(4) {
-          -moz-transition-delay: 0.57s, 0.57s;
-          -o-transition-delay: 0.57s, 0.57s;
-          -webkit-transition-delay: 0.57s, 0.57s;
-          transition-delay: 0.57s, 0.57s;
-          z-index: 9;
-        }
-        &:nth-child(5) {
-          -moz-transition-delay: 0.61s, 0.61s;
-          -o-transition-delay: 0.61s, 0.61s;
-          -webkit-transition-delay: 0.61s, 0.61s;
-          transition-delay: 0.61s, 0.61s;
-          z-index: 8;
-        }
-        &:nth-child(6) {
-          -moz-transition-delay: 0.65s, 0.65s;
-          -o-transition-delay: 0.65s, 0.65s;
-          -webkit-transition-delay: 0.65s, 0.65s;
-          transition-delay: 0.65s, 0.65s;
-          z-index: 7;
+
+        $sum : 0;
+        @for $i from 1 through 6 {
+          $sum : $sum + 0.1s;
+          &:nth-child(#{$i}) {
+            transition-delay: $sum, $sum;
+            z-index: 13 - $i;
+          }
         }
       }
     }
@@ -327,5 +294,8 @@
 .projects {
   .page-section {
     margin-left: 0;
+  }
+  .section-ttl-block {
+    margin-bottom: 50px;
   }
 }

@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   loadingScreen();
-  effectTitle(3.2);
+  effectTitle(2.5);
 
   menuChild();
 
@@ -17,7 +17,7 @@ function getDataProject() {
     _json = data;
 
     var projectBody = document.querySelector(".portfolio__list");
-    var second = 2.5;
+    var second = 2.8;
     var mapSort = _json.sort((a, b) => b.id -  a.id);
 
     var projectItem = mapSort.map((item) => {

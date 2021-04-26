@@ -268,26 +268,12 @@
 
 .header-child {
   width: 100%;
-  // position: fixed;
-  // z-index: 1060;
-  // top: 0;
-  // left: 0;
+  position: fixed;
+  z-index: 1060;
+  top: 0;
+  left: 0;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
-  transform: translateY(-105%);
   transition: all 0.5s;
-
-  &--sticky {
-    position: fixed;
-    z-index: 1060;
-    top: 0;
-    left: 0;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
-    
-    transform: translateY(0);
-    // & + .main-child {
-    //   padding-top: 62px;
-    // }
-  }
 
   &-top {
     display: flex;
@@ -295,10 +281,6 @@
     align-items: center;
     background: $color-white;
     padding: 10px 30px;
-
-    .open & {
-      background: $color-lpink;
-    }
   }
 
   &-nav {

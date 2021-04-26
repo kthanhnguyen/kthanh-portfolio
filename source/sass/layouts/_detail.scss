@@ -129,8 +129,18 @@
   }
 }
 
+#detail {
+  background: $color-lpink;
+  padding-bottom: 50px;
+}
+
 .detail {
   font-family: "Lato";
+  padding: 30px 50px;
+  background: $color-white;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+  
   &__name {
     color: $color-bla;
     font-size: 4rem;
@@ -140,10 +150,12 @@
     margin-bottom: 0.5em;
     width: 100%;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+    text-align: center;
   }
   &__share {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-align: left;
     margin-bottom: 20px;
   }
@@ -180,6 +192,20 @@
     }
   }
 
+  .btn-1 {
+    color: $color-gray;
+    margin: 0;
+    background: $color-white;
+    &::before {
+      border-bottom-color: $color-gray;
+    }
+    &:hover {
+      color: $color-white;
+      path {
+        fill: $color-white;
+      }
+    }
+  }
 
   @include mediaQuery("md") {
     margin-top: 30px;
