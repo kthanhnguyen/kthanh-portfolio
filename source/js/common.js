@@ -29,7 +29,7 @@ const menuChild = function() {
 
 /** Effect Title */
 const effectTitle = function(time) {
-  gsap.utils.toArray(".page-section").forEach((container) => {
+  gsap.utils.toArray(".section").forEach((container) => {
     const lineBar = container.querySelector(".ttl-bar");
     const title = container.querySelector(".h2-ttl-line");
 

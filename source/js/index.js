@@ -1,6 +1,8 @@
 window.addEventListener("load", function () {
+
   loadingScreen();
-  effectTitle(0);
+  effectTitle(0.5)
+  bgBlock();
 
   aciveMenu();
   window.addEventListener("scroll", aciveMenu);
@@ -11,13 +13,36 @@ window.addEventListener("load", function () {
   mainVisual();
 
   aboutAnimation();
-
-  bgBlock();
   tagSkilks();
-
   getDataProject();
 
-  fullPageScroll();
+  if ($("#pagescroll").length > 0) {
+    $("#pagescroll").fullpage({
+      anchors: ['home', 'about', 'skills', 'projects', 'contact'],
+      navigation: false,
+      autoScrolling: true,
+      scrollBar: true,
+      verticalCentered: true,
+      responsiveWidth: 768,
+      lockAnchors: true,
+      afterLoad: function(index) {
+        if(index.anchor === "projects") {
+          var imgs = document.querySelectorAll('.screen-img');
+      
+          imgs.forEach((item) => {
+            let imgFirHeight = item.height;
+            item.style.transitionDuration = 0.005 * imgFirHeight + "s";
+          })
+        }
+      },
+      afterRender: function () {
+        runWow();
+      }
+    });
+  }
+
+
+
 });
 
 function aciveMenu() {
@@ -99,7 +124,7 @@ function aboutAnimation() {
     const timeline = gsap.timeline({
       defaults: {
         duration: 2,
-        ease: "slow",
+        ease: "power2.inOut",
       },
       scrollTrigger: {
         trigger: container,
@@ -112,24 +137,15 @@ function aboutAnimation() {
       })
       .to(
         rvtext, {
-        xPercent: -100,
-        ease: "power2.inOut",
+        xPercent: -100
       },
         "-=2"
       );
-    // .fromTo(
-    //   image, {
-    //   scale: 2,
-    // }, {
-    //   scale: 1,
-    // },
-    //   0.3
-    // );
   });
 }
 
 function bgBlock() {
-  gsap.utils.toArray(".page-section").forEach((container) => {
+  gsap.utils.toArray(".section").forEach((container) => {
     const bg = container.querySelector(".bg-block__content");
 
     const timeBg = gsap.timeline({
@@ -318,7 +334,7 @@ function getDataProject() {
     _json = data;
 
     var projectBody = document.querySelector(".portfolio__pro-list");
-    var second = 0;
+    var second = 0.5;
     var mapSort = _json.sort((a, b) => b.id - a.id);
     var mapLimit = mapSort.limit(6);
 
@@ -358,33 +374,4 @@ function getDataProject() {
       };
     }
   });
-}
-
-function fullPageScroll() {
-  if ($("#pagescroll").length > 0) {
-    $("#pagescroll").fullpage({
-      anchors: ['home', 'about', 'skills', 'projects', 'contact'],
-      navigation: false,
-      autoScrolling: true,
-      scrollBar: true,
-      verticalCentered: true,
-      responsiveWidth: 768,
-      animateAnchor: true,
-      lockAnchors: true,
-      afterLoad: function(anchorLink, index) {
-        if(index.anchor === "projects") {
-          var imgs = document.querySelectorAll('.screen-img');
-      
-          imgs.forEach((index) => {
-            let imgFirHeight = index.height;
-            index.style.transitionDuration = 0.005 * imgFirHeight + "s";
-          })
-      
-        }
-      },
-      afterRender: function () {
-        runWow();
-      }
-    });
-  }
 }
