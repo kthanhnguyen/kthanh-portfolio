@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
-
   loadingScreen();
+
   effectTitle(0.5)
   bgBlock();
 
@@ -18,13 +18,16 @@ window.addEventListener("load", function () {
 
   if ($("#pagescroll").length > 0) {
     $("#pagescroll").fullpage({
+      // lazyLoad: true,
+      verticalCentered: false,
+      animateAnchor: true,
       anchors: ['home', 'about', 'skills', 'projects', 'contact'],
-      navigation: false,
       autoScrolling: true,
       scrollBar: true,
-      verticalCentered: true,
-      responsiveWidth: 768,
       lockAnchors: true,
+      navigation: false,
+      responsiveWidth: 768,
+
       afterLoad: function(index) {
         if(index.anchor === "projects") {
           var imgs = document.querySelectorAll('.screen-img');
@@ -40,9 +43,6 @@ window.addEventListener("load", function () {
       }
     });
   }
-
-
-
 });
 
 function aciveMenu() {
