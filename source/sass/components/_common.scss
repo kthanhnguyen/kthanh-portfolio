@@ -48,6 +48,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include mediaQuery("md") {
+    padding: 5em 0;
+  }
 }
 
 .page-section {

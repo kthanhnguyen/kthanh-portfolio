@@ -138,8 +138,13 @@
   }
 
   @include mediaQuery("md") {
-    margin-top: 60px;
-    padding: 0;
+    padding: 4em 0 3em;
+    li {
+      width: 100%;
+      a {
+        width: 100%;
+      }
+    }
   }
 }
 

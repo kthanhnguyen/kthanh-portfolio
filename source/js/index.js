@@ -18,7 +18,6 @@ window.addEventListener("load", function () {
 
   if ($("#pagescroll").length > 0) {
     $("#pagescroll").fullpage({
-      // lazyLoad: true,
       verticalCentered: false,
       animateAnchor: true,
       anchors: ['home', 'about', 'skills', 'projects', 'contact'],
@@ -27,11 +26,22 @@ window.addEventListener("load", function () {
       lockAnchors: true,
       navigation: false,
       responsiveWidth: 768,
+      afterResponsive: function (isResponsive) {
+        console.log(isResponsive);
+        if (isResponsive) {
+          const listSec = document.querySelectorAll(".section");
+          listSec.forEach(sec => {
+            if (!sec.classList.contains("mainVisual")) {
+              sec.classList.add("fp-auto-height-responsive");
+            }
+          })
+        }
+      },
 
-      afterLoad: function(index) {
-        if(index.anchor === "projects") {
+      afterLoad: function (index) {
+        if (index.anchor === "projects") {
           var imgs = document.querySelectorAll('.screen-img');
-      
+
           imgs.forEach((item) => {
             let imgFirHeight = item.height;
             item.style.transitionDuration = 0.005 * imgFirHeight + "s";
@@ -51,7 +61,7 @@ function aciveMenu() {
 
   let index = sections.length;
 
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
   links.forEach((link) => link.classList.remove("active"));
   links[index].classList.add("active");
@@ -137,8 +147,8 @@ function aboutAnimation() {
       })
       .to(
         rvtext, {
-        xPercent: -100
-      },
+          xPercent: -100
+        },
         "-=2"
       );
   });
@@ -160,12 +170,12 @@ function bgBlock() {
     });
     timeBg.fromTo(
       bg, {
-      immediateRender: false,
-      x: "100%",
-      ease: "Power4.easeIn",
-    }, {
-      x: "0",
-    },
+        immediateRender: false,
+        x: "100%",
+        ease: "Power4.easeIn",
+      }, {
+        x: "0",
+      },
       0.5
     );
   });

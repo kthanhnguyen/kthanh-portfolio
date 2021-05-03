@@ -289,6 +289,24 @@
   &__more {
     text-align: center;
   }
+
+  @include mediaQuery("md") {
+    .section-ttl-block {
+      margin-bottom: 50px;
+    }
+    &__more {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      .button {
+        width: 90%;
+        .icon-right {
+          &:after {
+            top: 22px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .projects {

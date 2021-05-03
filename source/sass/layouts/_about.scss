@@ -65,6 +65,11 @@
   //     background: url("/images/dot.svg");
   //   }
   // }
+  @include mediaQuery("md") {
+    &__content {
+      padding-right: 0;
+    }
+  }
 }
 
 
