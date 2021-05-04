@@ -8,6 +8,11 @@
     font-size: 1.8rem;
     line-height: 2;
   }
+  @include mediaQuery("md") {
+    &__text {
+      padding-right: 0;
+    }
+  }
 }
 
 #myCanvas {

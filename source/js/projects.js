@@ -23,7 +23,7 @@ function getDataProject() {
     var projectItem = mapSort.map((item) => {
       second += 0.1;
       return (
-        '<div class="grid-md-4 wow fadeInUp" data-wow-delay="' + second + 's">' +
+        '<div class="grid-12 grid-md-4 wow fadeInUp" data-wow-delay="' + second + 's">' +
         '<a class="image item" href="/detail.html?pid=' + item.id +'">' +
         '<div class="bar">' +
         "<h2>" +

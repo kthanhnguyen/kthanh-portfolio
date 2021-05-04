@@ -4,6 +4,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var cache = require('gulp-cached')
 var notify = require('gulp-notify')
 var plumber = require('gulp-plumber')
+var minify = require('gulp-minify');
+var cleanCss = require('gulp-clean-css');
 
 //** Post CSS Modules **//
 var postcss = require('gulp-postcss');
@@ -61,7 +63,6 @@ function sassTask() {
     .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError)) // compile scss
     .pipe(postcss(processors)) // autoprefix and combine media queries
     .pipe(sourcemaps.write(paths.maps)) // write emaps relative to source dir
-    .pipe(cache('cashe-sass'))
     .pipe(gulp.dest(paths.sass.dest)) // pipe to css folder
     .pipe(browserSync.reload({
       stream: true,
@@ -83,6 +84,7 @@ function htmlTask() {
 //js
 function jsTask() {
   return gulp.src(paths.scripts.src)
+    .pipe(minify())
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(cache('cashe-js'))
     .pipe(browserSync.reload({

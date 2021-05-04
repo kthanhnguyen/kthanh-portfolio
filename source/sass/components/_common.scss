@@ -49,7 +49,7 @@
   align-items: center;
   justify-content: center;
   @include mediaQuery("md") {
-    padding: 5em 0;
+    padding: 9em 0 5em;
   }
 }
 
@@ -184,6 +184,10 @@
     }
   }
 }
+
+
+@include col();
+
 
 .grid-center {
   align-items: center;

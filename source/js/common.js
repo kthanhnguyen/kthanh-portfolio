@@ -99,15 +99,11 @@ const runWow = function() {
 
 /** function load projects */
 const getItem = function(list) {
-  var rs = list.map((i) => {
-    return "<li>" + i.tagname + "</li>";
-  });
+  var rs = list.map((i) => "<li>" + i.tagname + "</li>");
   return rs;
 }
 
 const getTech = function(list) {
-  var rs = list.map((i) => {
-    return "<li>" + i.technicalName + "</li>";
-  });
+  var rs = list.map((i) => "<li>" + i.technicalName + "</li>");
   return rs;
 }

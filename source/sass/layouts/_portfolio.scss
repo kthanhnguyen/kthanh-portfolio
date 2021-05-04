@@ -266,7 +266,6 @@
         &-img {
           transform: translate3d(0px, 0px, 0px);
         }
-    
       }
       &:hover {
         .screen {
@@ -284,6 +283,21 @@
         font-size: 2rem;
       }
     }
+    @include mediaQuery("md") {
+      .pro-list__item {
+        margin: 10px 0;
+        .screen {
+          height: 200px;
+        }
+        &:hover {
+          .screen {
+            &-img {
+              transform: translate3d(0px, calc(-100% + 200px), 0px);
+            }
+          }
+        }
+      }
+    }
   }
 
   &__more {
@@ -292,7 +306,7 @@
 
   @include mediaQuery("md") {
     .section-ttl-block {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
     &__more {
       font-size: 1.2rem;
@@ -310,10 +324,14 @@
 }
 
 .projects {
+  
   .page-section {
     margin-left: 0;
   }
   .section-ttl-block {
     margin-bottom: 50px;
+  }
+  @include mediaQuery("md") {
+    padding: 0;
   }
 }

@@ -33,6 +33,7 @@ function getModalSlider(id, list) {
 }
 
 function getInfoPro() {
+
   var pid = get_query().pid;
 
   var jsonPath = "/data/data.json";
@@ -44,8 +45,7 @@ function getInfoPro() {
     let detailItem = _json.find(item => {
       return item.id === pid;
     })
-
-    console.log(detailItem);
+    document.title = detailItem.name +  " | NKT";
 
     var detailBody = document.querySelector(".detail-block");
 
@@ -65,7 +65,7 @@ function getInfoPro() {
       '            <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>' +
       '          </g>' +
       '          <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>' +
-      '          </svg>BACK PROJETCS</span>' +
+      '          </svg>BACK LIST PROJETCS</span>' +
       "        </a>" +
       "      </div>" +
       '      <div class="detail__slide">' + getModalSlider(detailItem.id, detailItem.listImgs).join("") + "</div>" +

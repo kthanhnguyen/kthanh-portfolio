@@ -16,42 +16,45 @@ window.addEventListener("load", function () {
   tagSkilks();
   getDataProject();
 
-  if ($("#pagescroll").length > 0) {
-    $("#pagescroll").fullpage({
-      verticalCentered: false,
-      animateAnchor: true,
-      anchors: ['home', 'about', 'skills', 'projects', 'contact'],
-      autoScrolling: true,
-      scrollBar: true,
-      lockAnchors: true,
-      navigation: false,
-      responsiveWidth: 768,
-      afterResponsive: function (isResponsive) {
-        console.log(isResponsive);
-        if (isResponsive) {
-          const listSec = document.querySelectorAll(".section");
-          listSec.forEach(sec => {
-            if (!sec.classList.contains("mainVisual")) {
-              sec.classList.add("fp-auto-height-responsive");
-            }
-          })
+  let winWidth = window.innerWidth;
+  if(winWidth > 767) {
+    if ($("#pagescroll").length > 0) {
+      $("#pagescroll").fullpage({
+        verticalCentered: false,
+        animateAnchor: true,
+        anchors: ['home', 'about', 'skills', 'projects', 'contact'],
+        autoScrolling: true,
+        scrollBar: true,
+        lockAnchors: true,
+        navigation: false,
+        responsiveWidth: 768,
+        afterResponsive: function (isResponsive) {
+          console.log(isResponsive);
+          if (isResponsive) {
+            const listSec = document.querySelectorAll(".section");
+            listSec.forEach(sec => {
+              if (!sec.classList.contains("mainVisual")) {
+                sec.classList.add("fp-auto-height-responsive");
+              }
+            })
+          }
+        },
+  
+        afterLoad: function (index) {
+          if (index.anchor === "projects") {
+            var imgs = document.querySelectorAll('.screen-img');
+  
+            imgs.forEach((item) => {
+              let imgFirHeight = item.height;
+              item.style.transitionDuration = 0.005 * imgFirHeight + "s";
+            })
+          }
+        },
+        afterRender: function () {
+          runWow();
         }
-      },
-
-      afterLoad: function (index) {
-        if (index.anchor === "projects") {
-          var imgs = document.querySelectorAll('.screen-img');
-
-          imgs.forEach((item) => {
-            let imgFirHeight = item.height;
-            item.style.transitionDuration = 0.005 * imgFirHeight + "s";
-          })
-        }
-      },
-      afterRender: function () {
-        runWow();
-      }
-    });
+      });
+    }
   }
 });
 
@@ -87,10 +90,7 @@ function menuMobile() {
     delay_time = 0;
   var elm = document.querySelectorAll(".header__menu li");
 
-  btnMoblie.addEventListener("click", function () {
-    this.classList.toggle("active");
-    nav.classList.toggle("active");
-
+  const checkMenu = function() {
     if (btnMoblie.classList.contains("active")) {
       TweenMax.to(nav, 0.5, {
         x: -vw,
@@ -122,7 +122,35 @@ function menuMobile() {
         delay_time += 0.02;
       });
     }
+  }
+
+  const links = document.querySelectorAll(".header__menu a");
+  for (const link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      btnMoblie.classList.remove("active");
+
+      const href = this.getAttribute("href");
+      const offsetTop = document.querySelector(href).offsetTop;
+
+      scroll({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+
+      checkMenu();
+    });
+  }
+
+  btnMoblie.addEventListener("click", function () {
+    this.classList.toggle("active");
+    nav.classList.toggle("active");
+
+    checkMenu();
   });
+
+
 }
 
 function aboutAnimation() {

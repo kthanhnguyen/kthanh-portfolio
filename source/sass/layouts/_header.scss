@@ -264,6 +264,9 @@
     transform: scale(0.92);
     transition: transform 0.2s 0.41s ease-out;
   }
+  @include mediaQuery("md") {
+    padding-top: 62px;
+  }
 }
 
 .header-child {
@@ -389,6 +392,11 @@
 
   &__logo {
     width: 60px;
+  }
+  @include mediaQuery("md") {
+    &-top {
+      padding: 10px 20px;
+    }
   }
 }
 
