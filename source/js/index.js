@@ -1,5 +1,9 @@
-window.addEventListener("load", function () {
+window.addEventListener("orientationchange resize load", init());
+
+function init() {
   loadingScreen();
+
+  fullPageScroll();
 
   effectTitle(0.5)
   bgBlock();
@@ -8,42 +12,45 @@ window.addEventListener("load", function () {
   window.addEventListener("scroll", aciveMenu);
 
   menuMobile();
-  window.addEventListener("resize", menuMobile);
+  window.addEventListener("orientationchange", menuMobile);
 
   mainVisual();
 
   aboutAnimation();
   tagSkilks();
   getDataProject();
+}
 
-  let winWidth = window.innerWidth;
-  if(winWidth > 767) {
+function fullPageScroll() {
+  if (!(isiPhone || isAndroid || isiPad)) {
     if ($("#pagescroll").length > 0) {
       $("#pagescroll").fullpage({
-        verticalCentered: false,
-        animateAnchor: true,
         anchors: ['home', 'about', 'skills', 'projects', 'contact'],
-        autoScrolling: true,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
+        showActiveTooltip: false,
         scrollBar: true,
+        autoScrolling: true,
+        animateAnchor: true,
         lockAnchors: true,
-        navigation: false,
-        responsiveWidth: 768,
-        afterResponsive: function (isResponsive) {
-          console.log(isResponsive);
-          if (isResponsive) {
-            const listSec = document.querySelectorAll(".section");
-            listSec.forEach(sec => {
-              if (!sec.classList.contains("mainVisual")) {
-                sec.classList.add("fp-auto-height-responsive");
-              }
-            })
-          }
-        },
-  
+        // responsiveWidth: 1025,
+        // afterResponsive: function (isResponsive) {
+
+        //   if (isResponsive) {
+        //     const listSec = document.querySelectorAll(".section");
+        //     listSec.forEach(sec => {
+        //       if (!sec.classList.contains("mainVisual")) {
+        //         sec.classList.add("fp-auto-height-responsive");
+        //       }
+        //     })
+        //   }
+        // },
+
         afterLoad: function (index) {
           if (index.anchor === "projects") {
             var imgs = document.querySelectorAll('.screen-img');
-  
+
             imgs.forEach((item) => {
               let imgFirHeight = item.height;
               item.style.transitionDuration = 0.005 * imgFirHeight + "s";
@@ -56,7 +63,7 @@ window.addEventListener("load", function () {
       });
     }
   }
-});
+}
 
 function aciveMenu() {
   const links = document.querySelectorAll(".header__menu a");
@@ -64,7 +71,7 @@ function aciveMenu() {
 
   let index = sections.length;
 
-  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
 
   links.forEach((link) => link.classList.remove("active"));
   links[index].classList.add("active");
@@ -90,7 +97,7 @@ function menuMobile() {
     delay_time = 0;
   var elm = document.querySelectorAll(".header__menu li");
 
-  const checkMenu = function() {
+  const checkMenu = function () {
     if (btnMoblie.classList.contains("active")) {
       TweenMax.to(nav, 0.5, {
         x: -vw,
@@ -175,8 +182,8 @@ function aboutAnimation() {
       })
       .to(
         rvtext, {
-          xPercent: -100
-        },
+        xPercent: -100
+      },
         "-=2"
       );
   });
@@ -198,12 +205,12 @@ function bgBlock() {
     });
     timeBg.fromTo(
       bg, {
-        immediateRender: false,
-        x: "100%",
-        ease: "Power4.easeIn",
-      }, {
-        x: "0",
-      },
+      immediateRender: false,
+      x: "100%",
+      ease: "Power4.easeIn",
+    }, {
+      x: "0",
+    },
       0.5
     );
   });

@@ -73,3 +73,11 @@ p {
   margin-bottom: 1rem;
   line-height: 1.5;
 }
+
+/* ============ fullpage ============ */
+#fp-nav ul li .fp-tooltip {
+  color: $color-main;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: $color-main;
+}
