@@ -78,14 +78,82 @@ function uaCheck() {
 uaCheck();
 
 /*--------------------------------------------------
-HEADER NAV PAGE CHILD
+HEADER NAV PAGE
 ----------------------------------------------------*/
-const menuChild = function () {
-  const menu = document.querySelector(".menu-toggle");
-  menu.addEventListener("click", function () {
-    document.body.classList.toggle("open");
-  })
+function menuMobile() {
+  var btnMoblie = document.getElementById("mobile-link");
+  var nav = document.querySelector(".header__menu");
+  var vw = window.innerWidth,
+    delay_time = 0;
+  var elm = document.querySelectorAll(".header__menu li");
+  var body = document.body;
+
+  const checkMenu = function () {
+    if (body.classList.contains("menu-open")) {
+      TweenMax.to(nav, 0.5, {
+        x: -vw,
+        ease: Expo.easeInOut,
+      });
+      elm.forEach((item) => {
+        TweenMax.to(item, 1.2, {
+          x: -vw,
+          scaleX: 1,
+          delay: delay_time,
+          ease: Expo.easeInOut,
+        });
+        delay_time += 0.04;
+        item.addEventListener("click", () => {
+          document.body.className = "";
+        });
+      });
+    } else {
+      TweenMax.to(nav, 0.8, {
+        x: 0,
+        ease: Expo.easeInOut,
+      });
+      elm.forEach((item) => {
+        TweenMax.to(item, 1, {
+          x: 0,
+          delay: delay_time,
+          ease: Expo.easeInOut,
+        });
+        delay_time += 0.02;
+      });
+    }
+  }
+
+  const links = document.querySelectorAll(".header__menu a");
+  for (const link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      body.classList.remove("menu-open");
+      const href = this.getAttribute("href");
+
+
+      const path = window.location.pathname;
+      if(path == "/index.html" || path == "/") {
+        const offsetTop = document.querySelector(href).offsetTop;
+
+        scroll({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+      else {
+        location.replace("/" + href);
+      }
+      checkMenu();
+    });
+  }
+
+  btnMoblie.addEventListener("click", function () {
+    body.classList.toggle("menu-open");
+
+    checkMenu();
+  });
 }
+menuMobile();
 
 /*--------------------------------------------------
 EFFECT TITLE

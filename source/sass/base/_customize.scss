@@ -75,9 +75,29 @@ p {
 }
 
 /* ============ fullpage ============ */
-#fp-nav ul li .fp-tooltip {
-  color: $color-main;
+#fp-nav {
+  ul {
+    li {
+      a {
+        position: relative;
+        span {
+          background: $color-main;
+        }
+        &.active {
+          & + .fp-tooltip {
+            opacity: 1;
+            width: auto;
+          }
+        }
+      }
+      .fp-tooltip {
+        color: $color-main;
+        font-family: inherit;
+        top: -4px;
+      }
+    }
+  }
 }
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
-  background: $color-main;
-}
+
+
+

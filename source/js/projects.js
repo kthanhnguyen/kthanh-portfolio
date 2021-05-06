@@ -1,11 +1,7 @@
 window.addEventListener("load", function () {
   loadingScreen();
   effectTitle(2.5);
-
-  menuChild();
-
   runWow();
-
   getDataProject();
 });
 

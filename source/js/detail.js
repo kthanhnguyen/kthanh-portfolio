@@ -1,11 +1,7 @@
 window.addEventListener("load", function () {
   loadingScreen();
   effectTitle(3.2);
-
-  menuChild();
-
   runWow();
-
   getInfoPro();
 });
 
