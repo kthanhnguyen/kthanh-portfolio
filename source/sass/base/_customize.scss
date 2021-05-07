@@ -97,6 +97,17 @@ p {
       }
     }
   }
+  &.home-nav {
+    ul {
+      li {
+        a {
+          span {
+            background: $color-white;
+          }
+        }
+      }
+    }
+  }
 }
 
 

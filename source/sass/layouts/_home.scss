@@ -1,12 +1,10 @@
 .mainVisual {
-  height: 100vh;
+  // height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-
-  /*---------------------------------*/
   display: flex !important;
-  background-image: url("https://assets.website-files.com/5f4f98ba6b9aeb718ac262b8/5f50b1f768d33877e1b5a82f_wave%20(1).svg"), linear-gradient(80deg, $color-lblue, $color-main);
+  background-image: url("/images/mv-triangle.svg"), linear-gradient(80deg, $color-lblue, $color-main);
   background-position: 50% 100%, 0px 0px;
   background-size: contain, auto;
   background-repeat: no-repeat, repeat;
@@ -24,60 +22,37 @@
     height: 100%;
   }
   &__pic {
-    position: relative;
     &-img {
-      width: 80%;
+      position: relative;
+      img {
+        width: 80%;
+      }
     }
     &-txt {
       position: absolute;
       left: auto;
       top: 0%;
-      right: 32px;
+      right: 0;
       bottom: 0%;
       transform: rotate(90deg);
       color: #ffffff0d;
-      font-size: 110px;
-      line-height: 110px;
+      font-size: 11.7vh;
       letter-spacing: 5px;
       &-gray {
         color: #a5a5a51a;
       }
     }
   }
-  /*---------------------------------*/
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 50%;
-    width: 100%;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    z-index: 2;
-  }
-  .page-section {
-    margin-left: 0;
-  }
   &__text {
     width: 100%;
     height: 100%;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
     padding-right: 5em;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     z-index: 2;
     font-family: "Raleway",sans-serif;
-    // text-align: center;
   }
   &__title,
   &__sub {
@@ -96,7 +71,7 @@
   }
   &__mouse-icon {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     left: 0;
     right: 0;
     z-index: 3;
@@ -169,26 +144,6 @@
   }
 }
 
-#particles {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      to bottom,
-      rgba(117, 114, 113, 0.8) 10%,
-      rgba(40, 49, 77, 0.8) 30%,
-      rgba(29, 35, 71, 0.8) 50%,
-      rgba(19, 25, 28, 0.8) 80%,
-      rgba(15, 14, 14, 0.8) 100%
-    ),
-    url("/images/tumblr_m00c3czJkM1qbukryo1_500.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
 @keyframes move {
   25% {
     opacity: 1;
@@ -198,10 +153,6 @@
     opacity: 1;
     transform: translateY(10px);
   }
-  // 67% {
-  //   opacity: 1;
-  //   transform: translateY(30px);
-  // }
   100% {
     opacity: 0;
     transform: translateY(30px) scale3d(0.5, 0.5, 0.5);

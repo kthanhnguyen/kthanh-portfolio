@@ -2,14 +2,11 @@ window.addEventListener("orientationchange resize load", init());
 
 function init() {
   loadingScreen();
+  effectTitle(0.5)
 
   fullPageScroll();
-
-  effectTitle(0.5)
+  mouseIcon();
   bgBlock();
-
-  // mainVisual();
-
   aboutAnimation();
   tagSkilks();
   getDataProject();
@@ -27,11 +24,16 @@ function fullPageScroll() {
       autoScrolling: true,
       animateAnchor: true,
       afterLoad: function (index) {
+        var secNumber = $('.fp-section.active').index() + 1;
 
-
-        if (index == 3) {
+        if (secNumber == 1) {
+          document.getElementById("fp-nav").classList.add("home-nav");
+        }
+        if(secNumber == 2 || secNumber == 3 || secNumber == 4 || secNumber == 5) {
+          document.getElementById("fp-nav").classList.remove("home-nav");
+        }
+        if (secNumber == 4) {
           var imgs = document.querySelectorAll('.screen-img');
-
           imgs.forEach((item) => {
             let imgFirHeight = item.height;
             item.style.transitionDuration = 0.005 * imgFirHeight + "s";
@@ -44,8 +46,6 @@ function fullPageScroll() {
     });
   }
 }
-
-
 
 function aboutAnimation() {
   gsap.utils.toArray(".about__item").forEach((container) => {
@@ -65,14 +65,14 @@ function aboutAnimation() {
     });
     timeline
       .to(rvimg, {
-        xPercent: 100,
+        xPercent: -100,
       })
       .to(
         rvtext, {
-        xPercent: -100
+        xPercent: 100
       },
         "-=2"
-      );
+      )
   });
 }
 
@@ -101,135 +101,18 @@ function bgBlock() {
       0.5
     );
   });
-
 }
 
-function mainVisual() {
-  const particlesJSON = {
-    particles: {
-      number: {
-        value: 400,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: "#ffffff",
-      },
-      shape: {
-        type: "image",
-        stroke: {
-          width: 3,
-          color: "#ffffff",
-        },
-        polygon: {
-          nb_sides: 5,
-        },
-        image: {
-          src: "/images/starburst_white_300_drop_2.png",
-          width: 100,
-          height: 100,
-        },
-      },
-      opacity: {
-        value: 0.7,
-        random: false,
-        anim: {
-          enable: false,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
-      },
-      size: {
-        value: 5,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 20,
-          size_min: 0.1,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: false,
-        distance: 50,
-        color: "#ffffff",
-        opacity: 0.6,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 5,
-        direction: "bottom",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 300,
-          rotateY: 1200,
-        },
-      },
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        // "onhover": {
-        //   "enable": true,
-        //   "mode": "repulse"
-        // },
-        onclick: {
-          enable: true,
-          mode: "repulse",
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 150,
-          line_linked: {
-            opacity: 1,
-          },
-        },
-        bubble: {
-          distance: 200,
-          size: 40,
-          duration: 2,
-          opacity: 8,
-          speed: 3,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.2,
-        },
-        push: {
-          particles_nb: 4,
-        },
-        remove: {
-          particles_nb: 2,
-        },
-      },
-    },
-    retina_detect: true,
-  };
-
-  particlesJS("particles", particlesJSON);
-
-  document
-    .querySelector(".mainVisual__mouse-icon")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      const href = this.getAttribute("href");
+function mouseIcon() {
+  document.querySelector(".mainVisual__mouse-icon").addEventListener("click", function(e){
+    e.preventDefault();
+    const href = this.getAttribute("href");
       const offsetTop = document.querySelector(href).offsetTop;
-
       scroll({
         top: offsetTop,
-        behavior: "smooth",
+        behavior: "smooth"
       });
-    });
+  })
 }
 
 function tagSkilks() {

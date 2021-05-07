@@ -64,15 +64,15 @@ function uaCheck() {
     $html.classList.add("iphone");
   }
   if (isAndroid) {
-    $html.addClass("android");
+    $html.classList.add("android");
   }
   if (isAndroidTablet) {
-    $html.addClass("androidTablet");
+    $html.classList.add("androidTablet");
   }
 
   if($html.classList.contains("ipad") || $html.classList.contains("androidTablet")) {
     let viewport = document.querySelector("meta[name=viewport]");
-    viewport.setAttribute('content', 'width=1280, maximum-scale=1.0');
+    viewport.setAttribute('content', 'width=1280, maximum-scale=1.0, user-scalable=no"');
   }
 }
 uaCheck();
@@ -91,7 +91,7 @@ function menuMobile() {
   const checkMenu = function () {
     if (body.classList.contains("menu-open")) {
       TweenMax.to(nav, 0.5, {
-        x: -vw,
+        width: "100%",
         ease: Expo.easeInOut,
       });
       elm.forEach((item) => {
@@ -108,7 +108,7 @@ function menuMobile() {
       });
     } else {
       TweenMax.to(nav, 0.8, {
-        x: 0,
+        width: 0,
         ease: Expo.easeInOut,
       });
       elm.forEach((item) => {
@@ -153,7 +153,9 @@ function menuMobile() {
     checkMenu();
   });
 }
+
 menuMobile();
+
 
 /*--------------------------------------------------
 EFFECT TITLE

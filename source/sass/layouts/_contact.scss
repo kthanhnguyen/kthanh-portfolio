@@ -18,6 +18,9 @@
     height: 100%;
     background: rgba(42, 42, 42, 0.4);
   }
+  .section-ttl-block {
+    margin-bottom: 20px;
+  }
   .container {
     position: relative;
     z-index: 1;
@@ -37,7 +40,7 @@
   }
 
   &__form {
-    margin-top: 40px;
+    margin-top: 20px;
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -91,10 +94,8 @@
   &__socical {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 15px;
     li {
       margin-right: 1em;
-      margin-bottom: 1em;
     }
   }
 

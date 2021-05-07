@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   &__list {
@@ -253,13 +253,13 @@
     position: relative;
     .pro-list__item {
       display: block;
-      margin: 10px 40px;
+      margin: 15px 16px;
       // cursor: pointer;
       .screen {
         position: relative;
         display: block;
         width: 100%;
-        height: 150px;
+        height: 180px;
         overflow: hidden;
         border: 1px solid #f0f0f0;
         box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
@@ -270,7 +270,7 @@
       &:hover {
         .screen {
           &-img {
-            transform: translate3d(0px, calc(-100% + 150px), 0px);
+            transform: translate3d(0px, calc(-100% + 180px), 0px);
           }
         }
       }
