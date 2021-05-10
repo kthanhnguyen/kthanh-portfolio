@@ -369,6 +369,17 @@ $btn-height : 50px;
   &:hover .icon-right {
     right: -15px;
   }
+
+  &--more {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 1.2rem;
+    .icon-right {
+      top: -14px;
+      right: 0;
+    }
+  }
 }
 
 @-webkit-keyframes criss-cross-right {

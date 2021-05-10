@@ -12,6 +12,14 @@
     &__text {
       padding-right: 0;
     }
+    .bg-block {
+      width: 100%;
+      height: 100%;
+      .bg-block__content {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
   }
 }
 

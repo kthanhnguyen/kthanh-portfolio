@@ -67,7 +67,8 @@
   }
   @include mediaQuery("md") {
     &__content {
-      padding-right: 0;
+      margin-top: 10px;
+      padding-left: 0;
     }
     &__btn {
       margin-bottom: 20px;

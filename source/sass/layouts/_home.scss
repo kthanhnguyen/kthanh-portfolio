@@ -134,12 +134,22 @@
     }
   }
   @include mediaQuery("md") {
+    padding: 10em 20px 12em;
     &__text {
       display: block;
       height: auto;
+      padding-right: 0;
     }
     &__mouse-icon {
-      bottom: 5%;
+      bottom: 7%;
+    }
+    &__title {
+      font-size: 3rem;
+    }
+    &__pic {
+      &-txt {
+        font-size: 7vh;
+      }
     }
   }
 }
