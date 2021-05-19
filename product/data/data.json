@@ -1,0 +1,285 @@
+[
+  {
+    "id": "01",
+    "name": "Toyobo",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "Toyobo company website (Films and Functional Polymers, Industrial Materials, and Healthcare)",
+      "aboutBottom": "This project, I act as front end developer. Data is based on old website, content correction according to customer opinion."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "JQuery" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "CSS" },
+      { "tagname": "JAVASCRIPT"},
+      { "tagname": "JQUERY"}
+    ],
+    "link": "https://www.toyobo.co.jp/"
+  },
+  {
+    "id": "02",
+    "name": "JCB",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "Project on incentives and usage of JCB card.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project used Gulp to build the scss, then layouts were integrated into the CMS Durpal"
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "JQuery" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" },
+      { "technicalName": "SCSS" },
+      { "technicalName": "Gulp" },
+      { "technicalName": "NodeJS" },
+      { "technicalName": "Drupal" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "SCSS" },
+      { "tagname": "JQUERY"},
+      { "tagname": "GULP" },
+      { "tagname": "NODEJS" }
+    ],
+    "link": "https://tabilover.jcb.jp/"
+  },
+
+  {
+    "id": "03",
+    "name": "Tutuanna Sporty",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "A landing page for selling sports uniforms.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "JQuery" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" },
+      { "imgname": "05" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "CSS" },
+      { "tagname": "JAVASCRIPT"},
+      { "tagname": "JQUERY"}
+    ],
+    "link": "https://www.tutuanna.jp/lp/sporty/"
+  },
+  {
+    "id": "04",
+    "name": "Matt collection",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "Project on website to sell carpet.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design. The project requires the use of pure javascript."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" },
+      { "imgname": "05" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "CSS" },
+      { "tagname": "JAVASCRIPT"}
+    ],
+    "link": "https://www.duskin.jp/item/mat/collection/"
+  },
+  {
+    "id": "05",
+    "name": "Game Monster",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "The game kills moving monsters by clicking on them.",
+      "aboutBottom": "This project I designed, and developed as a trainee."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "HTML5 - canvas" },
+      { "technicalName": "CSS" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "CSS" },
+      { "tagname": "JAVASCRIPT"},
+      { "tagname": "ANIMATIONS"},
+      { "tagname": "CANVAS"}
+    ],
+    "link": "https://kthanhnguyen.github.io/javascript/monster/"
+  },
+  {
+    "id": "06",
+    "name": "Japan Meeting & Meet",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "Establish website introducing tourism destinations, and prominent events of Japan. Users can search for each place, entertainment, dining, event venue in any prefecture in Japan.",
+      "aboutBottom": "This project, I act as front end developer. I got the customers photoshop desgin, is project development like design."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "JQuery" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" },
+      { "technicalName": "SCSS" },
+      { "technicalName": "Gulp" },
+      { "technicalName": "Bootstrap" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "SCSS" },
+      { "tagname": "JQUERY"},
+      { "tagname": "BOOTSTRAP 4"},
+      { "tagname": "GULP"}
+    ],
+    "link": "https://www.japanmeetings.org/"
+  },
+  {
+    "id": "07",
+    "name": "Transcosmos Analytics Recruit",
+    "imgMain": "main.png",
+    "about": {
+      "aboutTop": "Build the target company's website to provide analytical information to determine the user interface improvement direction. Analysis is based on many factors like Adobe Analytics, Google Analytics, etc.",
+      "aboutBottom": "At this project, I act as a front end developer. Get Xd design from customers. Then develop the product."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript" },
+      { "technicalName": "JQuery" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3" },
+      { "technicalName": "Animation" },
+      { "technicalName": "Tweenmax.js" }
+    ],
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "SCSS" },
+      { "tagname": "JQUERY"},
+      { "tagname": "ANIMATIONS"},
+      { "tagname": "TWEENMAX"}
+    ],
+    "link": "https://www.trans-cosmos.co.jp/transcosmos-analytics/recruit/"
+  },
+  {
+    "id": "08",
+    "name": "My Movie",
+    "about": {
+      "aboutTop": "Building an online movie ticketing application. Users can buy movie tickets of all cinemas across the country.",
+      "aboutBottom": "This project I undertake the design, interface, and functionality of the product. The project uses API to retrieve data."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Typescript" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3 preprocessed with SCSS" },
+      { "technicalName": "Angular 8" },
+      { "technicalName": "RESTful API" },
+      { "technicalName": "Bootstrap" }
+    ],
+    "imgMain": "main.png",
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "SCSS" },
+      { "tagname": "ANGULAR 8"},
+      { "tagname": "BOOTSTRAP"},
+      { "tagname": "REST API"}
+    ],
+    "link": "#"
+  },
+  {
+    "id": "09",
+    "name": "Courses Online",
+    "about": {
+      "aboutTop": "Project to buy online courses.",
+      "aboutBottom":"This project I undertake the design, interface, and functionality of the product. The project uses Firebase to manage data."
+    },
+    "technical": [
+      { "technicalName": "Front-End Development" },
+      { "technicalName": "Javascript ES6" },
+      { "technicalName": "HTML5" },
+      { "technicalName": "CSS3 preprocessed with SCSS" },
+      { "technicalName": "React.js" },
+      { "technicalName": "Redux/Redux Thunk" },
+      { "technicalName": "Hooks" },
+      { "technicalName": "HOC" },
+      { "technicalName": "Firebase" },
+      { "technicalName": "Ant-Design" },
+      { "technicalName": "Bootstrap" }
+    ],
+    "imgMain": "main.png",
+    "listImgs": [
+      { "imgname": "01" },
+      { "imgname": "02" },
+      { "imgname": "03" },
+      { "imgname": "04" },
+      { "imgname": "05" },
+      { "imgname": "06" },
+      { "imgname": "07" }
+    ],
+    "tags": [
+      { "tagname": "HTML"},
+      { "tagname": "SCSS" },
+      { "tagname": "REACT"},
+      { "tagname": "REDUX"},
+      { "tagname": "FIREBASE"}
+    ],
+    "link": "https://react-courseonline.web.app/"
+  }
+]
