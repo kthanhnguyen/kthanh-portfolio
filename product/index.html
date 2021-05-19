@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | NKT</title>
   <link rel="icon" href="/images/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/materialdesignicons.css">
   <link rel="stylesheet" href="./css/animate.min.css">
   <link rel="stylesheet" href="./css/fullPage.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./css/main.css">
+  </noscript>
+
 </head>
 
 <body>
@@ -54,11 +53,9 @@
               <h1 class="fadeInUp wow mainVisual__title" data-wow-delay="3s">Hello, I'm <span
                   class="mainVisual__title--highlight">Nguyen
                   Kim Thanh</span><br>I'm a front-end web developer.</h1>
-              <!-- <h1 class="fadeInLeft wow mainVisual__title" data-wow-delay="2.8s">Hello <span
-                  class="mainVisual__title--highlight">World</span></h1> -->
             </div>
             <div class="mainVisual__pic grid-12 grid-md-6 wow fadeInRight" data-wow-delay="2.8s">
-              <div class="mainVisual__pic-img"><img src="https://dummyimage.com/720x960/ccc/fff.jpg" alt="">
+              <div class="mainVisual__pic-img"><img src="/images/main-mv.jpg" alt="">
                 <div class="mainVisual__pic-txt">PORTFOLI<span class="mainVisual__pic-txt-gray">O</span></div>
               </div>
             </div>
@@ -76,9 +73,7 @@
         <div class="about__list container">
           <div class="grid about__item">
             <div class="grid-md-6 about__pic">
-              <img
-                src="https://images.unsplash.com/photo-1608636142939-0a7da26aa494?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85"
-                alt="" />
+              <img src="/images/about-img.jpg" alt="" />
               <div class="about__img"></div>
             </div>
             <div class="grid-md-6 about__content">
