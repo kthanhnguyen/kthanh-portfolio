@@ -1,4 +1,5 @@
-/* ------------------ Loading screen ------------------ */
+// Loading Screen
+//-----------------------------------
 .loading {
   position: fixed;
   will-change: transform;
@@ -44,6 +45,8 @@
   }
 }
 
+// Common Section Page
+//-----------------------------------
 .section {
   display: flex;
   align-items: center;
@@ -119,7 +122,8 @@
   padding-top: 100px;
 }
 
-/* ============ display ============ */
+// Display Device PC/SP
+//-----------------------------------
 .pc-show {
   display: block;
   @include mediaQuery("md") {
@@ -133,12 +137,14 @@
   }
 }
 
-/* ============ text ============ */
+// Text Status
+//-----------------------------------
 ._center {
   text-align: center;
 }
 
-/* ============ title ============ */
+// Title Common
+//-----------------------------------
 .section-ttl-block {
   width: 100%;
   margin-bottom: 50px;
@@ -157,12 +163,6 @@
     font-size: 4rem;
     color: $color-main; 
   }
-  .h2-ttl {
-    font-family: "coolvetica";
-    font-size: 5rem;
-    color: $color-main;
-    text-align: center;
-  }
   &--right {
     text-align: right; 
     .ttl-bar {
@@ -172,8 +172,8 @@
   }
 }
 
-/* grid */
-
+// Grid Column
+//-----------------------------------
 .grid {
   @include grid();
 }
@@ -192,7 +192,6 @@
 
 @include col();
 
-
 .grid-center {
   align-items: center;
   justify-content: center;
@@ -203,3 +202,53 @@
     padding: 7em 0 6em;
   }
 }
+
+// Back To Top Button
+//-----------------------------------
+.page-top {
+  position: fixed;
+  width: 100%;
+  max-width: 1200px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: right;
+  writing-mode: vertical-rl; 
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  &__btn {
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background: $color-bla;
+      top: 0;
+      @include transition(0.5s);
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+    &:hover {
+      &::before {
+        left: 2px;
+        transform: translateY(0) rotate(-40deg);
+      }
+      &::after {
+        right: 2px;
+        transform: translateY(0) rotate(40deg);
+      }
+    }
+  }
+}
+

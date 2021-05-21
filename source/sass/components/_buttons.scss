@@ -375,8 +375,11 @@ $btn-height : 50px;
     border: 0;
     box-shadow: none;
     font-size: 1.2rem;
+    width: auto;
+    white-space: nowrap;
+    padding-right: 32px;
     .icon-right {
-      top: -14px;
+      top: -13px;
       right: 0;
     }
   }

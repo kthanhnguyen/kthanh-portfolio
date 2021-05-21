@@ -9,7 +9,6 @@ function init() {
   bgBlock();
   aboutAnimation();
   tagSkilks();
-  getDataProject();
 }
 
 function fullPageScroll() {
@@ -23,7 +22,7 @@ function fullPageScroll() {
       scrollBar: true,
       autoScrolling: true,
       animateAnchor: true,
-      afterLoad: function (index) {
+      afterLoad: function () {
         var secNumber = $('.fp-section.active').index() + 1;
 
         if (secNumber == 1) {
@@ -33,6 +32,8 @@ function fullPageScroll() {
           document.getElementById("fp-nav").classList.remove("home-nav");
         }
         if (secNumber == 4) {
+          
+
           var imgs = document.querySelectorAll('.screen-img');
           imgs.forEach((item) => {
             let imgFirHeight = item.height;
@@ -42,6 +43,7 @@ function fullPageScroll() {
       },
       afterRender: function () {
         runWow();
+        getDataProject();
       }
     });
   }

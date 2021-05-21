@@ -3,6 +3,8 @@ window.addEventListener("load", function () {
   effectTitle(3.2);
   runWow();
   getInfoPro();
+
+  backToTop();
 });
 
 function get_query() {
