@@ -3,6 +3,8 @@ window.addEventListener("load", function () {
   effectTitle(2.5);
   runWow();
   getDataProject();
+
+  backToTop();
 });
 
 function getDataProject() {

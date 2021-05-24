@@ -207,11 +207,8 @@
 //-----------------------------------
 .page-top {
   position: fixed;
-  width: 100%;
-  max-width: 1200px;
   bottom: 40px;
-  left: 0;
-  right: 0;
+  right: 3em;
   margin: 0 auto;
   text-align: right;
   writing-mode: vertical-rl; 
@@ -219,6 +216,8 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 5px;
+  transform: translateY(150%);
+  @include transition(0.5s);
   &__btn {
     position: relative;
     cursor: pointer;
@@ -249,6 +248,17 @@
         transform: translateY(0) rotate(40deg);
       }
     }
+  }
+  &--hide {
+    transform: translateY(150%);
+  }
+  &--show {
+    transform: translateY(0);
+  }
+
+  @include mediaQuery("md") {
+    font-size: 1.5rem;
+    right: 20px;
   }
 }
 

@@ -254,9 +254,11 @@ const backToTop =  function() {
 
   window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
+      mybutton.classList.remove("page-top--hide");
+      mybutton.classList.add("page-top--show");
     } else {
-      mybutton.style.display = "none";
+      mybutton.classList.remove("page-top--show");
+      mybutton.classList.add("page-top--hide");
     }
   };
 

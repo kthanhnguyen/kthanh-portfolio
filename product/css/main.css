@@ -1590,11 +1590,8 @@ p {
 
 .page-top {
   position: fixed;
-  width: 100%;
-  max-width: 1200px;
   bottom: 40px;
-  left: 0;
-  right: 0;
+  right: 3em;
   margin: 0 auto;
   text-align: right;
   -webkit-writing-mode: vertical-rl;
@@ -1604,6 +1601,10 @@ p {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 5px;
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .page-top__btn {
@@ -1641,6 +1642,16 @@ p {
   right: 2px;
   -webkit-transform: translateY(0) rotate(40deg);
           transform: translateY(0) rotate(40deg);
+}
+
+.page-top--hide {
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+}
+
+.page-top--show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .header {
@@ -2988,6 +2999,10 @@ p {
   }
   .sp-show {
     display: block;
+  }
+  .page-top {
+    font-size: 1.5rem;
+    right: 20px;
   }
   .header {
     height: 60px;
