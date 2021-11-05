@@ -1,8 +1,10 @@
 window.addEventListener("orientationchange resize load", init());
 
 function init() {
+  getDataProject();
   loadingScreen();
-  effectTitle(0.5)
+  effectTitle(0.5);
+  fpMenu();
 
   fullPageScroll();
   mouseIcon();
@@ -11,14 +13,57 @@ function init() {
   tagSkilks();
 }
 
+
+
+
+function fpMenu(){
+  const body = document.body;
+  const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
+  const menu = body.querySelector(".menu");
+  const menuItems = menu.querySelectorAll(".menu__item");
+  const menuBorder = menu.querySelector(".menu__border");
+  let activeItem = menu.querySelector(".active");
+
+  offsetMenuBorder(activeItem, menuBorder);
+  menuItems.forEach((item, index) => {
+    item.addEventListener("click", () => clickItem(item, index));
+  })
+
+  function clickItem(item, index) {
+
+    menu.style.removeProperty("--timeOut");
+    if (activeItem == item) return;
+    
+    if (activeItem) {
+      activeItem.classList.remove("active");
+    }
+    item.classList.add("active");
+    body.style.backgroundColor = bgColorsBody[index];
+    activeItem = item;
+    offsetMenuBorder(activeItem, menuBorder);
+  }
+  
+  function offsetMenuBorder(element, menuBorder) {
+    const offsetActiveItem = element.getBoundingClientRect();
+    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth  - offsetActiveItem.width) / 2) +  "px";
+    menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+  }
+  window.addEventListener("resize", () => {
+    offsetMenuBorder(activeItem, menuBorder);
+    menu.style.setProperty("--timeOut", "none");
+  });
+  
+}
+
 function fullPageScroll() {
   if (!(isiPhone || isAndroid || isiPad)) {
     new fullpage('#pagescroll', {
-      anchors: ['home-page', 'about-page', 'skills-page', 'projects-page', 'contact-page'],
+      // anchors: ['home-page', 'about-page', 'skills-page', 'projects-page', 'contact-page'],
       menu: '#header__menu',
       navigation: true,
       navigationPosition: 'right',
-      navigationTooltips: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
+      menu: '#fp-menu',
+      // navigationTooltips: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
       scrollBar: true,
       autoScrolling: true,
       animateAnchor: true,
@@ -33,7 +78,6 @@ function fullPageScroll() {
         }
         if (secNumber == 4) {
           
-
           var imgs = document.querySelectorAll('.screen-img');
           imgs.forEach((item) => {
             let imgFirHeight = item.height;
@@ -43,7 +87,7 @@ function fullPageScroll() {
       },
       afterRender: function () {
         runWow();
-        getDataProject();
+        
       }
     });
   }

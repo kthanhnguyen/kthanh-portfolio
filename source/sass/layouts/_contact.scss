@@ -24,6 +24,9 @@
   .container {
     position: relative;
     z-index: 1;
+    @include mediaQueryMin("md") {
+      margin-top: 80px;
+    }
   }
   h3 {
     color: #cacaca;
